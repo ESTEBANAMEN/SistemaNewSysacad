@@ -1,0 +1,22 @@
+[
+  {
+    "NombreCompleto": "Esteban Amen",
+    "DNI": "38837906",
+    "Direccion": "Murature 3925",
+    "NumeroTelefono": "1157587325",
+    "CorreoElectronico": "stebanamen@gmail.com",
+    "Legajo": "114389",
+    "Contrasenia": "1234",
+    "TipoDeUsuario": "Administrador"
+  },
+  {
+    "NombreCompleto": "Juan Perez",
+    "DNI": "35912105",
+    "Direccion": "Paso 871",
+    "NumeroTelefono": "1138659800",
+    "CorreoElectronico": "juanperez@gmail.com",
+    "Legajo": "112052",
+    "Contrasenia": "1234",
+    "TipoDeUsuario": "Estudiante"
+  }
+]
