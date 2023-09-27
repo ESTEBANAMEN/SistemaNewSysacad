@@ -66,19 +66,36 @@ namespace FormSysacad
 
             List<Usuario> listaDeUsuarios = ReadStreamJSON("usuarios.json");
 
-            foreach (Usuario usuario in listaDeUsuarios)
+            if (listaDeUsuarios == null)
             {
-                if (usuario.Legajo == legajo && usuario.Contrasenia == contra && _usuario == "Administrador")
-                {
-                    labelErrorIdContra.Visible = false;
-                    FormAdministrador formAdmin = new FormAdministrador();
-                    formAdmin.Show();
-                    return;
-                }
-                else
-                {
+                listaDeUsuarios = new List<Usuario>();
+            }
+
+            switch (_usuario)
+            {
+                case "Administrador":
+                    foreach (Usuario usuario in listaDeUsuarios)
+                    {
+                        if (usuario.Legajo == legajo && usuario.Contrasenia == contra)
+                        {
+                            labelErrorIdContra.Visible = false;
+                            FormAdministrador formAdmin = new FormAdministrador();
+                            formAdmin.Show();
+                            break;
+                        }
+                        else
+                        {
+                            labelErrorIdContra.Visible = true;
+                        }
+                    }
+                    break;
+                case "Profesor":
+                    break;
+                case "Estudiante":
+                    break;
+                default:
                     labelErrorIdContra.Visible = true;
-                }
+                    break;
             }
         }
     }

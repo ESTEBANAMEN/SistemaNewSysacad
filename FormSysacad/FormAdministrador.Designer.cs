@@ -42,7 +42,7 @@
             buttonGestionarCursos = new Button();
             panelRegistrarEstudiante = new Panel();
             textBoxTipo = new TextBox();
-            labelTipoDeUsuario = new Label();
+            labelFormularioTipoDeUsuario = new Label();
             labelErrorFormularioRegsitrarEstudiante = new Label();
             buttonFormularioRegistrar = new Button();
             textBoxContraProv = new TextBox();
@@ -53,15 +53,23 @@
             textBoxNombre = new TextBox();
             labelFormularioContraseña = new Label();
             labelFormularioCorreo = new Label();
-            labelFormularioNumTelefono = new Label();
+            labelFormularioNumTel = new Label();
             labelFormularioDireccion = new Label();
             labelFormularioDNI = new Label();
             labelFormularioNombre = new Label();
             labelTituloFormularioDeRegistro = new Label();
+            panelExitoAlGenerar = new Panel();
+            pictureBoxUtnavellaneda = new PictureBox();
+            buttonenviarAlMailYSalir = new Button();
+            labelMensajePanelExitoAlGenerar = new Label();
+            pictureBoxGrande = new PictureBox();
             panelNegro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imagenUTNFraUno).BeginInit();
             panelOpcionesAdministrador.SuspendLayout();
             panelRegistrarEstudiante.SuspendLayout();
+            panelExitoAlGenerar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUtnavellaneda).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxGrande).BeginInit();
             SuspendLayout();
             // 
             // panelNegro
@@ -72,7 +80,7 @@
             panelNegro.Dock = DockStyle.Top;
             panelNegro.Location = new Point(15, 0);
             panelNegro.Name = "panelNegro";
-            panelNegro.Size = new Size(1327, 85);
+            panelNegro.Size = new Size(1280, 85);
             panelNegro.TabIndex = 12;
             // 
             // imagenUTNFraUno
@@ -92,7 +100,7 @@
             TituloDelPrograma.BackColor = Color.White;
             TituloDelPrograma.Font = new Font("Impact", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
             TituloDelPrograma.ForeColor = Color.OrangeRed;
-            TituloDelPrograma.Location = new Point(305, 9);
+            TituloDelPrograma.Location = new Point(282, 9);
             TituloDelPrograma.Name = "TituloDelPrograma";
             TituloDelPrograma.Size = new Size(814, 59);
             TituloDelPrograma.TabIndex = 0;
@@ -105,7 +113,7 @@
             panelInferior.Dock = DockStyle.Bottom;
             panelInferior.Location = new Point(15, 573);
             panelInferior.Name = "panelInferior";
-            panelInferior.Size = new Size(1327, 15);
+            panelInferior.Size = new Size(1280, 15);
             panelInferior.TabIndex = 15;
             // 
             // panelNegroIzquierda
@@ -121,7 +129,7 @@
             // 
             panelNegroDerecha.BackColor = Color.RoyalBlue;
             panelNegroDerecha.Dock = DockStyle.Right;
-            panelNegroDerecha.Location = new Point(1342, 0);
+            panelNegroDerecha.Location = new Point(1295, 0);
             panelNegroDerecha.Name = "panelNegroDerecha";
             panelNegroDerecha.Size = new Size(15, 588);
             panelNegroDerecha.TabIndex = 13;
@@ -131,7 +139,7 @@
             labelSeleccionDeOpcionAdministrador.Anchor = AnchorStyles.None;
             labelSeleccionDeOpcionAdministrador.AutoSize = true;
             labelSeleccionDeOpcionAdministrador.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSeleccionDeOpcionAdministrador.Location = new Point(506, 112);
+            labelSeleccionDeOpcionAdministrador.Location = new Point(483, 112);
             labelSeleccionDeOpcionAdministrador.Name = "labelSeleccionDeOpcionAdministrador";
             labelSeleccionDeOpcionAdministrador.Size = new Size(346, 24);
             labelSeleccionDeOpcionAdministrador.TabIndex = 16;
@@ -146,7 +154,7 @@
             buttonSeleccionDeOpcionAdministrador.Cursor = Cursors.Hand;
             buttonSeleccionDeOpcionAdministrador.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSeleccionDeOpcionAdministrador.ImageAlign = ContentAlignment.MiddleRight;
-            buttonSeleccionDeOpcionAdministrador.Location = new Point(471, 139);
+            buttonSeleccionDeOpcionAdministrador.Location = new Point(448, 139);
             buttonSeleccionDeOpcionAdministrador.Name = "buttonSeleccionDeOpcionAdministrador";
             buttonSeleccionDeOpcionAdministrador.Size = new Size(417, 33);
             buttonSeleccionDeOpcionAdministrador.TabIndex = 17;
@@ -161,7 +169,7 @@
             panelOpcionesAdministrador.AutoSize = true;
             panelOpcionesAdministrador.Controls.Add(buttonRegistrarEstudiante);
             panelOpcionesAdministrador.Controls.Add(buttonGestionarCursos);
-            panelOpcionesAdministrador.Location = new Point(471, 169);
+            panelOpcionesAdministrador.Location = new Point(448, 169);
             panelOpcionesAdministrador.Name = "panelOpcionesAdministrador";
             panelOpcionesAdministrador.Size = new Size(417, 71);
             panelOpcionesAdministrador.TabIndex = 18;
@@ -205,7 +213,7 @@
             panelRegistrarEstudiante.AutoScroll = true;
             panelRegistrarEstudiante.AutoSize = true;
             panelRegistrarEstudiante.Controls.Add(textBoxTipo);
-            panelRegistrarEstudiante.Controls.Add(labelTipoDeUsuario);
+            panelRegistrarEstudiante.Controls.Add(labelFormularioTipoDeUsuario);
             panelRegistrarEstudiante.Controls.Add(labelErrorFormularioRegsitrarEstudiante);
             panelRegistrarEstudiante.Controls.Add(buttonFormularioRegistrar);
             panelRegistrarEstudiante.Controls.Add(textBoxContraProv);
@@ -216,46 +224,46 @@
             panelRegistrarEstudiante.Controls.Add(textBoxNombre);
             panelRegistrarEstudiante.Controls.Add(labelFormularioContraseña);
             panelRegistrarEstudiante.Controls.Add(labelFormularioCorreo);
-            panelRegistrarEstudiante.Controls.Add(labelFormularioNumTelefono);
+            panelRegistrarEstudiante.Controls.Add(labelFormularioNumTel);
             panelRegistrarEstudiante.Controls.Add(labelFormularioDireccion);
             panelRegistrarEstudiante.Controls.Add(labelFormularioDNI);
             panelRegistrarEstudiante.Controls.Add(labelFormularioNombre);
             panelRegistrarEstudiante.Controls.Add(labelTituloFormularioDeRegistro);
-            panelRegistrarEstudiante.Location = new Point(93, 246);
+            panelRegistrarEstudiante.Location = new Point(70, 246);
             panelRegistrarEstudiante.Name = "panelRegistrarEstudiante";
-            panelRegistrarEstudiante.Size = new Size(1167, 323);
+            panelRegistrarEstudiante.Size = new Size(1174, 323);
             panelRegistrarEstudiante.TabIndex = 19;
             panelRegistrarEstudiante.Visible = false;
             // 
             // textBoxTipo
             // 
             textBoxTipo.Anchor = AnchorStyles.None;
-            textBoxTipo.Location = new Point(208, 240);
+            textBoxTipo.Location = new Point(212, 240);
             textBoxTipo.Name = "textBoxTipo";
             textBoxTipo.Size = new Size(373, 27);
             textBoxTipo.TabIndex = 17;
             // 
-            // labelTipoDeUsuario
+            // labelFormularioTipoDeUsuario
             // 
-            labelTipoDeUsuario.Anchor = AnchorStyles.None;
-            labelTipoDeUsuario.AutoSize = true;
-            labelTipoDeUsuario.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelTipoDeUsuario.Location = new Point(3, 243);
-            labelTipoDeUsuario.Name = "labelTipoDeUsuario";
-            labelTipoDeUsuario.Size = new Size(199, 20);
-            labelTipoDeUsuario.TabIndex = 16;
-            labelTipoDeUsuario.Text = "Tipo (admin-estudiante):";
+            labelFormularioTipoDeUsuario.Anchor = AnchorStyles.None;
+            labelFormularioTipoDeUsuario.AutoSize = true;
+            labelFormularioTipoDeUsuario.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelFormularioTipoDeUsuario.Location = new Point(7, 243);
+            labelFormularioTipoDeUsuario.Name = "labelFormularioTipoDeUsuario";
+            labelFormularioTipoDeUsuario.Size = new Size(199, 20);
+            labelFormularioTipoDeUsuario.TabIndex = 16;
+            labelFormularioTipoDeUsuario.Text = "Tipo (admin-estudiante):";
             // 
             // labelErrorFormularioRegsitrarEstudiante
             // 
             labelErrorFormularioRegsitrarEstudiante.AutoSize = true;
             labelErrorFormularioRegsitrarEstudiante.Font = new Font("Georgia", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             labelErrorFormularioRegsitrarEstudiante.ForeColor = Color.Red;
-            labelErrorFormularioRegsitrarEstudiante.Location = new Point(686, 208);
+            labelErrorFormularioRegsitrarEstudiante.Location = new Point(741, 208);
             labelErrorFormularioRegsitrarEstudiante.Name = "labelErrorFormularioRegsitrarEstudiante";
-            labelErrorFormularioRegsitrarEstudiante.Size = new Size(383, 21);
+            labelErrorFormularioRegsitrarEstudiante.Size = new Size(271, 21);
             labelErrorFormularioRegsitrarEstudiante.TabIndex = 15;
-            labelErrorFormularioRegsitrarEstudiante.Text = "¡ERROR! No se permiten campos vacíos.";
+            labelErrorFormularioRegsitrarEstudiante.Text = "¡ERROR! Revise los campos.";
             labelErrorFormularioRegsitrarEstudiante.Visible = false;
             // 
             // buttonFormularioRegistrar
@@ -263,7 +271,7 @@
             buttonFormularioRegistrar.Anchor = AnchorStyles.None;
             buttonFormularioRegistrar.AutoSize = true;
             buttonFormularioRegistrar.Font = new Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonFormularioRegistrar.Location = new Point(669, 232);
+            buttonFormularioRegistrar.Location = new Point(673, 232);
             buttonFormularioRegistrar.Name = "buttonFormularioRegistrar";
             buttonFormularioRegistrar.Size = new Size(417, 86);
             buttonFormularioRegistrar.TabIndex = 14;
@@ -274,7 +282,7 @@
             // textBoxContraProv
             // 
             textBoxContraProv.Anchor = AnchorStyles.None;
-            textBoxContraProv.Location = new Point(781, 175);
+            textBoxContraProv.Location = new Point(785, 175);
             textBoxContraProv.Name = "textBoxContraProv";
             textBoxContraProv.Size = new Size(369, 27);
             textBoxContraProv.TabIndex = 13;
@@ -282,7 +290,7 @@
             // textBoxCorreo
             // 
             textBoxCorreo.Anchor = AnchorStyles.None;
-            textBoxCorreo.Location = new Point(164, 175);
+            textBoxCorreo.Location = new Point(168, 175);
             textBoxCorreo.Name = "textBoxCorreo";
             textBoxCorreo.Size = new Size(417, 27);
             textBoxCorreo.TabIndex = 12;
@@ -290,7 +298,7 @@
             // textBoxNumTel
             // 
             textBoxNumTel.Anchor = AnchorStyles.None;
-            textBoxNumTel.Location = new Point(761, 105);
+            textBoxNumTel.Location = new Point(765, 105);
             textBoxNumTel.Name = "textBoxNumTel";
             textBoxNumTel.Size = new Size(389, 27);
             textBoxNumTel.TabIndex = 11;
@@ -298,15 +306,15 @@
             // textBoxDireccion
             // 
             textBoxDireccion.Anchor = AnchorStyles.None;
-            textBoxDireccion.Location = new Point(96, 105);
+            textBoxDireccion.Location = new Point(177, 105);
             textBoxDireccion.Name = "textBoxDireccion";
-            textBoxDireccion.Size = new Size(485, 27);
+            textBoxDireccion.Size = new Size(408, 27);
             textBoxDireccion.TabIndex = 10;
             // 
             // textBoxDNI
             // 
             textBoxDNI.Anchor = AnchorStyles.None;
-            textBoxDNI.Location = new Point(713, 45);
+            textBoxDNI.Location = new Point(717, 45);
             textBoxDNI.Name = "textBoxDNI";
             textBoxDNI.Size = new Size(437, 27);
             textBoxDNI.TabIndex = 9;
@@ -314,7 +322,7 @@
             // textBoxNombre
             // 
             textBoxNombre.Anchor = AnchorStyles.None;
-            textBoxNombre.Location = new Point(194, 45);
+            textBoxNombre.Location = new Point(198, 45);
             textBoxNombre.Name = "textBoxNombre";
             textBoxNombre.Size = new Size(387, 27);
             textBoxNombre.TabIndex = 8;
@@ -324,7 +332,7 @@
             labelFormularioContraseña.Anchor = AnchorStyles.None;
             labelFormularioContraseña.AutoSize = true;
             labelFormularioContraseña.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelFormularioContraseña.Location = new Point(587, 178);
+            labelFormularioContraseña.Location = new Point(591, 178);
             labelFormularioContraseña.Name = "labelFormularioContraseña";
             labelFormularioContraseña.Size = new Size(180, 20);
             labelFormularioContraseña.TabIndex = 7;
@@ -335,40 +343,40 @@
             labelFormularioCorreo.Anchor = AnchorStyles.None;
             labelFormularioCorreo.AutoSize = true;
             labelFormularioCorreo.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelFormularioCorreo.Location = new Point(3, 178);
+            labelFormularioCorreo.Location = new Point(7, 178);
             labelFormularioCorreo.Name = "labelFormularioCorreo";
             labelFormularioCorreo.Size = new Size(155, 20);
             labelFormularioCorreo.TabIndex = 6;
             labelFormularioCorreo.Text = "Correo Electrónico:";
             // 
-            // labelFormularioNumTelefono
+            // labelFormularioNumTel
             // 
-            labelFormularioNumTelefono.Anchor = AnchorStyles.None;
-            labelFormularioNumTelefono.AutoSize = true;
-            labelFormularioNumTelefono.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelFormularioNumTelefono.Location = new Point(587, 108);
-            labelFormularioNumTelefono.Name = "labelFormularioNumTelefono";
-            labelFormularioNumTelefono.Size = new Size(168, 20);
-            labelFormularioNumTelefono.TabIndex = 5;
-            labelFormularioNumTelefono.Text = "Número de Teléfono:";
+            labelFormularioNumTel.Anchor = AnchorStyles.None;
+            labelFormularioNumTel.AutoSize = true;
+            labelFormularioNumTel.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelFormularioNumTel.Location = new Point(591, 108);
+            labelFormularioNumTel.Name = "labelFormularioNumTel";
+            labelFormularioNumTel.Size = new Size(168, 20);
+            labelFormularioNumTel.TabIndex = 5;
+            labelFormularioNumTel.Text = "Número de Teléfono:";
             // 
             // labelFormularioDireccion
             // 
             labelFormularioDireccion.Anchor = AnchorStyles.None;
             labelFormularioDireccion.AutoSize = true;
             labelFormularioDireccion.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelFormularioDireccion.Location = new Point(3, 108);
+            labelFormularioDireccion.Location = new Point(7, 108);
             labelFormularioDireccion.Name = "labelFormularioDireccion";
-            labelFormularioDireccion.Size = new Size(87, 20);
+            labelFormularioDireccion.Size = new Size(164, 20);
             labelFormularioDireccion.TabIndex = 4;
-            labelFormularioDireccion.Text = "Dirección:";
+            labelFormularioDireccion.Text = "Dirección Completa:";
             // 
             // labelFormularioDNI
             // 
             labelFormularioDNI.Anchor = AnchorStyles.None;
             labelFormularioDNI.AutoSize = true;
             labelFormularioDNI.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelFormularioDNI.Location = new Point(587, 48);
+            labelFormularioDNI.Location = new Point(591, 48);
             labelFormularioDNI.Name = "labelFormularioDNI";
             labelFormularioDNI.Size = new Size(120, 20);
             labelFormularioDNI.TabIndex = 3;
@@ -379,7 +387,7 @@
             labelFormularioNombre.Anchor = AnchorStyles.None;
             labelFormularioNombre.AutoSize = true;
             labelFormularioNombre.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelFormularioNombre.Location = new Point(3, 48);
+            labelFormularioNombre.Location = new Point(7, 48);
             labelFormularioNombre.Name = "labelFormularioNombre";
             labelFormularioNombre.Size = new Size(185, 20);
             labelFormularioNombre.TabIndex = 1;
@@ -390,17 +398,79 @@
             labelTituloFormularioDeRegistro.Anchor = AnchorStyles.None;
             labelTituloFormularioDeRegistro.AutoSize = true;
             labelTituloFormularioDeRegistro.Font = new Font("Georgia", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            labelTituloFormularioDeRegistro.Location = new Point(457, 10);
+            labelTituloFormularioDeRegistro.Location = new Point(461, 10);
             labelTituloFormularioDeRegistro.Name = "labelTituloFormularioDeRegistro";
             labelTituloFormularioDeRegistro.Size = new Size(250, 24);
             labelTituloFormularioDeRegistro.TabIndex = 0;
             labelTituloFormularioDeRegistro.Text = "Formulario de Registro";
             // 
+            // panelExitoAlGenerar
+            // 
+            panelExitoAlGenerar.Anchor = AnchorStyles.None;
+            panelExitoAlGenerar.AutoScroll = true;
+            panelExitoAlGenerar.AutoSize = true;
+            panelExitoAlGenerar.Controls.Add(pictureBoxUtnavellaneda);
+            panelExitoAlGenerar.Controls.Add(buttonenviarAlMailYSalir);
+            panelExitoAlGenerar.Controls.Add(labelMensajePanelExitoAlGenerar);
+            panelExitoAlGenerar.Location = new Point(70, 96);
+            panelExitoAlGenerar.Name = "panelExitoAlGenerar";
+            panelExitoAlGenerar.Size = new Size(1174, 473);
+            panelExitoAlGenerar.TabIndex = 20;
+            panelExitoAlGenerar.Visible = false;
+            // 
+            // pictureBoxUtnavellaneda
+            // 
+            pictureBoxUtnavellaneda.Anchor = AnchorStyles.None;
+            pictureBoxUtnavellaneda.Image = (Image)resources.GetObject("pictureBoxUtnavellaneda.Image");
+            pictureBoxUtnavellaneda.Location = new Point(238, 281);
+            pictureBoxUtnavellaneda.Name = "pictureBoxUtnavellaneda";
+            pictureBoxUtnavellaneda.Size = new Size(696, 151);
+            pictureBoxUtnavellaneda.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxUtnavellaneda.TabIndex = 2;
+            pictureBoxUtnavellaneda.TabStop = false;
+            // 
+            // buttonenviarAlMailYSalir
+            // 
+            buttonenviarAlMailYSalir.Anchor = AnchorStyles.None;
+            buttonenviarAlMailYSalir.AutoSize = true;
+            buttonenviarAlMailYSalir.Font = new Font("Georgia", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonenviarAlMailYSalir.Location = new Point(238, 120);
+            buttonenviarAlMailYSalir.Name = "buttonenviarAlMailYSalir";
+            buttonenviarAlMailYSalir.Size = new Size(696, 129);
+            buttonenviarAlMailYSalir.TabIndex = 1;
+            buttonenviarAlMailYSalir.Text = "Enviar al CorreoElectronico y Cerrar Form";
+            buttonenviarAlMailYSalir.UseVisualStyleBackColor = true;
+            buttonenviarAlMailYSalir.Click += buttonenviarAlMailYSalir_Click;
+            // 
+            // labelMensajePanelExitoAlGenerar
+            // 
+            labelMensajePanelExitoAlGenerar.Anchor = AnchorStyles.None;
+            labelMensajePanelExitoAlGenerar.AutoSize = true;
+            labelMensajePanelExitoAlGenerar.BackColor = SystemColors.ActiveBorder;
+            labelMensajePanelExitoAlGenerar.BorderStyle = BorderStyle.Fixed3D;
+            labelMensajePanelExitoAlGenerar.Font = new Font("Georgia", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            labelMensajePanelExitoAlGenerar.ForeColor = Color.OrangeRed;
+            labelMensajePanelExitoAlGenerar.Location = new Point(238, 57);
+            labelMensajePanelExitoAlGenerar.Name = "labelMensajePanelExitoAlGenerar";
+            labelMensajePanelExitoAlGenerar.Size = new Size(696, 53);
+            labelMensajePanelExitoAlGenerar.TabIndex = 0;
+            labelMensajePanelExitoAlGenerar.Text = "¡Usuario Generado con Éxito!";
+            // 
+            // pictureBoxGrande
+            // 
+            pictureBoxGrande.Image = (Image)resources.GetObject("pictureBoxGrande.Image");
+            pictureBoxGrande.Location = new Point(272, 236);
+            pictureBoxGrande.Name = "pictureBoxGrande";
+            pictureBoxGrande.Size = new Size(814, 314);
+            pictureBoxGrande.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxGrande.TabIndex = 21;
+            pictureBoxGrande.TabStop = false;
+            // 
             // FormAdministrador
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1357, 588);
+            ClientSize = new Size(1310, 588);
             Controls.Add(panelNegro);
             Controls.Add(panelInferior);
             Controls.Add(panelNegroIzquierda);
@@ -409,6 +479,8 @@
             Controls.Add(buttonSeleccionDeOpcionAdministrador);
             Controls.Add(labelSeleccionDeOpcionAdministrador);
             Controls.Add(panelRegistrarEstudiante);
+            Controls.Add(panelExitoAlGenerar);
+            Controls.Add(pictureBoxGrande);
             Name = "FormAdministrador";
             Text = "FormAdministrador";
             panelNegro.ResumeLayout(false);
@@ -418,6 +490,10 @@
             panelOpcionesAdministrador.PerformLayout();
             panelRegistrarEstudiante.ResumeLayout(false);
             panelRegistrarEstudiante.PerformLayout();
+            panelExitoAlGenerar.ResumeLayout(false);
+            panelExitoAlGenerar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUtnavellaneda).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxGrande).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -439,7 +515,7 @@
         private Label labelTituloFormularioDeRegistro;
         private Label labelFormularioNombre;
         private Label labelFormularioDNI;
-        private Label labelFormularioNumTelefono;
+        private Label labelFormularioNumTel;
         private Label labelFormularioDireccion;
         private Label labelFormularioContraseña;
         private Label labelFormularioCorreo;
@@ -452,6 +528,11 @@
         private Button buttonFormularioRegistrar;
         private Label labelErrorFormularioRegsitrarEstudiante;
         private TextBox textBoxTipo;
-        private Label labelTipoDeUsuario;
+        private Label labelFormularioTipoDeUsuario;
+        private Panel panelExitoAlGenerar;
+        private Label labelMensajePanelExitoAlGenerar;
+        private Button buttonenviarAlMailYSalir;
+        private PictureBox pictureBoxUtnavellaneda;
+        private PictureBox pictureBoxGrande;
     }
 }

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SistemaNewSysacad\AccesoriosUtils\AccesoriosUtils.csproj" />
     <ProjectReference Include="..\TiposDeUsuario\TiposDeUsuario.csproj" />
   </ItemGroup>
 

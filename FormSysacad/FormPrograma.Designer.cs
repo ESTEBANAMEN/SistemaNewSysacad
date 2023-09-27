@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrograma));
             buttonSeleccionDeUsuario = new Button();
             panelNegro = new Panel();
-            imagenUTNFraUno = new PictureBox();
             TituloDelPrograma = new Label();
+            imagenUTNFraUno = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             panelNegroDerecha = new Panel();
@@ -51,11 +51,13 @@
             buttonAdministrador = new Button();
             buttonProfesor = new Button();
             labelErrorIdContra = new Label();
+            pictureBoxUtnavellaneda = new PictureBox();
             panelNegro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imagenUTNFraUno).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelMenuDeUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUtnavellaneda).BeginInit();
             SuspendLayout();
             // 
             // buttonSeleccionDeUsuario
@@ -66,7 +68,7 @@
             buttonSeleccionDeUsuario.Cursor = Cursors.Hand;
             buttonSeleccionDeUsuario.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSeleccionDeUsuario.ImageAlign = ContentAlignment.MiddleRight;
-            buttonSeleccionDeUsuario.Location = new Point(444, 137);
+            buttonSeleccionDeUsuario.Location = new Point(468, 137);
             buttonSeleccionDeUsuario.Name = "buttonSeleccionDeUsuario";
             buttonSeleccionDeUsuario.Size = new Size(417, 33);
             buttonSeleccionDeUsuario.TabIndex = 0;
@@ -77,13 +79,26 @@
             // panelNegro
             // 
             panelNegro.BackColor = Color.FromArgb(64, 64, 64);
-            panelNegro.Controls.Add(imagenUTNFraUno);
             panelNegro.Controls.Add(TituloDelPrograma);
+            panelNegro.Controls.Add(imagenUTNFraUno);
             panelNegro.Dock = DockStyle.Top;
             panelNegro.Location = new Point(15, 0);
             panelNegro.Name = "panelNegro";
-            panelNegro.Size = new Size(1273, 85);
+            panelNegro.Size = new Size(1320, 85);
             panelNegro.TabIndex = 1;
+            // 
+            // TituloDelPrograma
+            // 
+            TituloDelPrograma.Anchor = AnchorStyles.None;
+            TituloDelPrograma.AutoSize = true;
+            TituloDelPrograma.BackColor = Color.White;
+            TituloDelPrograma.Font = new Font("Impact", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TituloDelPrograma.ForeColor = Color.OrangeRed;
+            TituloDelPrograma.Location = new Point(411, 9);
+            TituloDelPrograma.Name = "TituloDelPrograma";
+            TituloDelPrograma.Size = new Size(491, 59);
+            TituloDelPrograma.TabIndex = 0;
+            TituloDelPrograma.Text = "NUEVO SISTEMA SYSACAD\r\n";
             // 
             // imagenUTNFraUno
             // 
@@ -94,19 +109,6 @@
             imagenUTNFraUno.SizeMode = PictureBoxSizeMode.Zoom;
             imagenUTNFraUno.TabIndex = 12;
             imagenUTNFraUno.TabStop = false;
-            // 
-            // TituloDelPrograma
-            // 
-            TituloDelPrograma.Anchor = AnchorStyles.None;
-            TituloDelPrograma.AutoSize = true;
-            TituloDelPrograma.BackColor = Color.White;
-            TituloDelPrograma.Font = new Font("Impact", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TituloDelPrograma.ForeColor = Color.OrangeRed;
-            TituloDelPrograma.Location = new Point(372, 9);
-            TituloDelPrograma.Name = "TituloDelPrograma";
-            TituloDelPrograma.Size = new Size(491, 59);
-            TituloDelPrograma.TabIndex = 0;
-            TituloDelPrograma.Text = "NUEVO SISTEMA SYSACAD\r\n";
             // 
             // pictureBox2
             // 
@@ -136,7 +138,7 @@
             // 
             panelNegroDerecha.BackColor = Color.FromArgb(64, 64, 64);
             panelNegroDerecha.Dock = DockStyle.Right;
-            panelNegroDerecha.Location = new Point(1288, 0);
+            panelNegroDerecha.Location = new Point(1335, 0);
             panelNegroDerecha.Name = "panelNegroDerecha";
             panelNegroDerecha.Size = new Size(15, 593);
             panelNegroDerecha.TabIndex = 2;
@@ -161,7 +163,7 @@
             labelSeleccionDeUsuario.Anchor = AnchorStyles.None;
             labelSeleccionDeUsuario.AutoSize = true;
             labelSeleccionDeUsuario.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSeleccionDeUsuario.Location = new Point(444, 109);
+            labelSeleccionDeUsuario.Location = new Point(468, 109);
             labelSeleccionDeUsuario.Name = "labelSeleccionDeUsuario";
             labelSeleccionDeUsuario.Size = new Size(420, 24);
             labelSeleccionDeUsuario.TabIndex = 5;
@@ -173,7 +175,7 @@
             labelLegajo.Anchor = AnchorStyles.None;
             labelLegajo.AutoSize = true;
             labelLegajo.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelLegajo.Location = new Point(444, 297);
+            labelLegajo.Location = new Point(468, 297);
             labelLegajo.Name = "labelLegajo";
             labelLegajo.Size = new Size(75, 24);
             labelLegajo.TabIndex = 6;
@@ -183,7 +185,7 @@
             // textBoxLegajo
             // 
             textBoxLegajo.Anchor = AnchorStyles.None;
-            textBoxLegajo.Location = new Point(444, 324);
+            textBoxLegajo.Location = new Point(468, 324);
             textBoxLegajo.Name = "textBoxLegajo";
             textBoxLegajo.Size = new Size(417, 27);
             textBoxLegajo.TabIndex = 7;
@@ -193,7 +195,7 @@
             labelContraseña.Anchor = AnchorStyles.None;
             labelContraseña.AutoSize = true;
             labelContraseña.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelContraseña.Location = new Point(444, 370);
+            labelContraseña.Location = new Point(468, 370);
             labelContraseña.Name = "labelContraseña";
             labelContraseña.Size = new Size(118, 24);
             labelContraseña.TabIndex = 8;
@@ -203,7 +205,7 @@
             // textBoxContrasenia
             // 
             textBoxContrasenia.Anchor = AnchorStyles.None;
-            textBoxContrasenia.Location = new Point(444, 397);
+            textBoxContrasenia.Location = new Point(468, 397);
             textBoxContrasenia.Name = "textBoxContrasenia";
             textBoxContrasenia.Size = new Size(417, 27);
             textBoxContrasenia.TabIndex = 9;
@@ -214,7 +216,7 @@
             buttonDeIngreso.AutoSize = true;
             buttonDeIngreso.Cursor = Cursors.Hand;
             buttonDeIngreso.Font = new Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonDeIngreso.Location = new Point(444, 480);
+            buttonDeIngreso.Location = new Point(468, 480);
             buttonDeIngreso.Name = "buttonDeIngreso";
             buttonDeIngreso.Size = new Size(417, 91);
             buttonDeIngreso.TabIndex = 10;
@@ -229,7 +231,7 @@
             panelInferior.Dock = DockStyle.Bottom;
             panelInferior.Location = new Point(15, 578);
             panelInferior.Name = "panelInferior";
-            panelInferior.Size = new Size(1273, 15);
+            panelInferior.Size = new Size(1320, 15);
             panelInferior.TabIndex = 11;
             // 
             // panelMenuDeUsuarios
@@ -238,7 +240,7 @@
             panelMenuDeUsuarios.Controls.Add(buttonEstudiante);
             panelMenuDeUsuarios.Controls.Add(buttonAdministrador);
             panelMenuDeUsuarios.Controls.Add(buttonProfesor);
-            panelMenuDeUsuarios.Location = new Point(444, 166);
+            panelMenuDeUsuarios.Location = new Point(468, 166);
             panelMenuDeUsuarios.Name = "panelMenuDeUsuarios";
             panelMenuDeUsuarios.Size = new Size(417, 99);
             panelMenuDeUsuarios.TabIndex = 12;
@@ -301,7 +303,7 @@
             labelErrorIdContra.AutoSize = true;
             labelErrorIdContra.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelErrorIdContra.ForeColor = Color.Red;
-            labelErrorIdContra.Location = new Point(444, 436);
+            labelErrorIdContra.Location = new Point(468, 436);
             labelErrorIdContra.Name = "labelErrorIdContra";
             labelErrorIdContra.Size = new Size(411, 24);
             labelErrorIdContra.TabIndex = 14;
@@ -309,13 +311,24 @@
             labelErrorIdContra.TextAlign = ContentAlignment.TopCenter;
             labelErrorIdContra.Visible = false;
             // 
+            // pictureBoxUtnavellaneda
+            // 
+            pictureBoxUtnavellaneda.Anchor = AnchorStyles.None;
+            pictureBoxUtnavellaneda.Image = (Image)resources.GetObject("pictureBoxUtnavellaneda.Image");
+            pictureBoxUtnavellaneda.Location = new Point(333, 176);
+            pictureBoxUtnavellaneda.Name = "pictureBoxUtnavellaneda";
+            pictureBoxUtnavellaneda.Size = new Size(654, 112);
+            pictureBoxUtnavellaneda.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxUtnavellaneda.TabIndex = 15;
+            pictureBoxUtnavellaneda.TabStop = false;
+            // 
             // FormPrograma
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = SystemColors.ButtonFace;
-            ClientSize = new Size(1303, 593);
+            ClientSize = new Size(1350, 593);
             Controls.Add(panelNegro);
             Controls.Add(panelInferior);
             Controls.Add(panelNegroIzquierda);
@@ -329,6 +342,7 @@
             Controls.Add(textBoxContrasenia);
             Controls.Add(labelErrorIdContra);
             Controls.Add(buttonDeIngreso);
+            Controls.Add(pictureBoxUtnavellaneda);
             ForeColor = SystemColors.ActiveCaptionText;
             Name = "FormPrograma";
             Text = "SYSACAD";
@@ -339,6 +353,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelMenuDeUsuarios.ResumeLayout(false);
             panelMenuDeUsuarios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUtnavellaneda).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -366,5 +381,6 @@
         private Button buttonProfesor;
         private Button buttonAdministrador;
         private Label labelErrorIdContra;
+        private PictureBox pictureBoxUtnavellaneda;
     }
 }

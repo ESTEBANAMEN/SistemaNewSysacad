@@ -13,8 +13,8 @@ namespace TiposDeUsuario
         private List<Usuario> listaDeUsuarios;
 
         public Administrador(string nombreCompleto, string documento, string direccion, string numeroTelefono,
-                             string correo, string legajo, string contra, string tipoDeUsuario) :
-                             base(nombreCompleto, documento, direccion, numeroTelefono, correo, legajo, contra, tipoDeUsuario)
+                             string correo, string legajo, string contra, string tipoDeUsuario) : base(nombreCompleto,
+                             documento, direccion, numeroTelefono, correo, legajo, contra, tipoDeUsuario)
         {
             NombreCompleto = nombreCompleto;
             DNI = documento;
@@ -46,7 +46,7 @@ namespace TiposDeUsuario
                     break;
                 }
             }
-
+            
             if (!usuarioExistente)
             {
                 listaDeUsuarios.Add(usuario);
@@ -56,6 +56,16 @@ namespace TiposDeUsuario
             return !usuarioExistente;
         }
 
+        public static bool EnviarMail(string correo)
+        {
+            bool correoEnviado = true;
+
+            if (correoEnviado)
+            {
+                return true;
+            }
+            return false;
+        }
 
     private static readonly string carpetaDeArchivos = @"C:\Users\steba\source\repos\TrabajoPractico\CarpetaDeArchivos";
 
