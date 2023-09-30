@@ -91,7 +91,7 @@
             // 
             TituloDelPrograma.Anchor = AnchorStyles.None;
             TituloDelPrograma.AutoSize = true;
-            TituloDelPrograma.BackColor = Color.White;
+            TituloDelPrograma.BackColor = SystemColors.InactiveCaption;
             TituloDelPrograma.Font = new Font("Impact", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
             TituloDelPrograma.ForeColor = Color.OrangeRed;
             TituloDelPrograma.Location = new Point(411, 9);
@@ -327,7 +327,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            BackColor = SystemColors.ButtonFace;
+            BackColor = SystemColors.InactiveCaption;
             ClientSize = new Size(1350, 593);
             Controls.Add(panelNegro);
             Controls.Add(panelInferior);

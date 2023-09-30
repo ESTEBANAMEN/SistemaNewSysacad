@@ -1,0 +1,68 @@
+[
+  {
+    "Nombre": "Programaci\u00F3n",
+    "Codigo": "pyl1",
+    "Descripcion": "Turnos Ma\u00F1ana/Tarde/Noche",
+    "CupoMaximo": "150"
+  },
+  {
+    "Nombre": "Matematicas",
+    "Codigo": "ms 123",
+    "Descripcion": "TurnoMaana",
+    "CupoMaximo": "12"
+  },
+  {
+    "Nombre": "asdasd",
+    "Codigo": "d1",
+    "Descripcion": "asdas",
+    "CupoMaximo": "123"
+  },
+  {
+    "Nombre": "Prueba",
+    "Codigo": "Prueba",
+    "Descripcion": "Prueba",
+    "CupoMaximo": "999"
+  },
+  {
+    "Nombre": "jsjsjs",
+    "Codigo": "123asd",
+    "Descripcion": "djdjdjdjdj",
+    "CupoMaximo": "99"
+  },
+  {
+    "Nombre": "a",
+    "Codigo": "a",
+    "Descripcion": "a",
+    "CupoMaximo": "1"
+  },
+  {
+    "Nombre": "asdasdddddddd",
+    "Codigo": "asdccc",
+    "Descripcion": "asdcccc",
+    "CupoMaximo": "13"
+  },
+  {
+    "Nombre": "popo",
+    "Codigo": "popo123",
+    "Descripcion": "popo",
+    "CupoMaximo": "99"
+  },
+  {
+    "Nombre": "pipi",
+    "Codigo": "pupu",
+    "Descripcion": "osdosd",
+    "CupoMaximo": "123"
+  },
+  {
+    "Nombre": "toronja",
+    "Codigo": "pito123",
+    "Descripcion": "sandungueo",
+    "CupoMaximo": "100"
+  },
+  {
+    "Nombre": "teta",
+    "Codigo": "tita",
+    "Descripcion": "tuta",
+    "CupoMaximo": "1"
+  }
+]

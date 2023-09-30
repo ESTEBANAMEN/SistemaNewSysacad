@@ -5,13 +5,19 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Cursos;
 
 namespace TiposDeUsuario
 {
     public class Administrador : Usuario
     {
         private List<Usuario> listaDeUsuarios;
+        private List<Curso> listaDeCursos;
 
+        public Administrador()
+        {
+
+        }
         public Administrador(string nombreCompleto, string documento, string direccion, string numeroTelefono,
                              string correo, string legajo, string contra, string tipoDeUsuario) : base(nombreCompleto,
                              documento, direccion, numeroTelefono, correo, legajo, contra, tipoDeUsuario)
@@ -26,11 +32,12 @@ namespace TiposDeUsuario
             TipoDeUsuario = tipoDeUsuario;
 
             listaDeUsuarios = new List<Usuario>();
+            listaDeCursos = new List<Curso>();
         }
 
         public bool RegistrarAdministradorOEstudiante(Usuario usuario)
         {
-            listaDeUsuarios = ReadStreamJSON("usuarios.json");
+            listaDeUsuarios = ReadStreamJSON<Usuario>("usuarios.json");
             bool usuarioExistente = false;
 
             if (listaDeUsuarios == null)
@@ -56,6 +63,34 @@ namespace TiposDeUsuario
             return !usuarioExistente;
         }
 
+        public bool GestionarCurso(Curso curso)
+        {
+            listaDeCursos = ReadStreamJSON<Curso>("cursos.json");
+            bool cursoExistente = false;
+
+            if (listaDeCursos == null)
+            {
+                listaDeCursos = new List<Curso>();
+            }
+
+            foreach (Curso cursoEnLista in listaDeCursos)
+            {
+                if (curso.Nombre == cursoEnLista.Nombre ||
+                    curso.Codigo == cursoEnLista.Codigo)
+                {
+                    cursoExistente = true;
+                    break;
+                }
+            }
+
+            if (!cursoExistente)
+            {
+                listaDeCursos.Add(curso);
+                WriteStreamJSON<Curso>("cursos.json", listaDeCursos);
+            }
+            return !cursoExistente;
+        }
+
         public static bool EnviarMail(string correo)
         {
             bool correoEnviado = true;
@@ -67,9 +102,9 @@ namespace TiposDeUsuario
             return false;
         }
 
-    private static readonly string carpetaDeArchivos = @"C:\Users\steba\source\repos\TrabajoPractico\CarpetaDeArchivos";
+        private static readonly string carpetaDeArchivos = @"C:\Users\steba\source\repos\TrabajoPractico\CarpetaDeArchivos";
 
-        public static void WriteStreamJSON(string nombreDelArchivo, List<Usuario> usuarios)
+        public static void WriteStreamJSON<T>(string nombreDelArchivo, List<T> lista)
         {
             string ruta = Path.Combine(carpetaDeArchivos, nombreDelArchivo);
 
@@ -80,7 +115,7 @@ namespace TiposDeUsuario
                     WriteIndented = true
                 };
 
-                string jsonString = JsonSerializer.Serialize(usuarios, options);
+                string jsonString = JsonSerializer.Serialize(lista, options);
 
                 File.WriteAllText(ruta, jsonString);
 
@@ -92,7 +127,7 @@ namespace TiposDeUsuario
             }
         }
 
-        public static List<Usuario>? ReadStreamJSON(string nombreDelArchivo)
+        public static List<T>? ReadStreamJSON<T>(string nombreDelArchivo)
         {
             string ruta = Path.Combine(carpetaDeArchivos, nombreDelArchivo);
 
@@ -102,17 +137,18 @@ namespace TiposDeUsuario
                 {
                     var json = reader.ReadToEnd();
 
-                    List<Usuario>? usuarios = JsonSerializer.Deserialize<List<Usuario>>(json);
-                    
-                    return usuarios;
+                    List<T>? lista = JsonSerializer.Deserialize<List<T>>(json);
+
+                    return lista;
                 }
             }
             else
             {
-                List<Usuario> usuarios = new List<Usuario>();
-                WriteStreamJSON(nombreDelArchivo, usuarios);
-                return usuarios;
+                List<T> listaVacia = new List<T>();
+                WriteStreamJSON(nombreDelArchivo, listaVacia);
+                return listaVacia;
             }
         }
-    } 
+
+    }
 }

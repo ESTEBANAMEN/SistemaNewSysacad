@@ -40,14 +40,5 @@ namespace TiposDeUsuario
             Contrasenia = contra;
             TipoDeUsuario = tipoDeUsuario;
         }
-
-        public bool Logearse()
-        {
-            if (Legajo == "" && Contrasenia == "")
-            {
-                return true;
-            }
-            return false;
-        }
     }
 }

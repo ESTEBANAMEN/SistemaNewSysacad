@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiposDeUsuario", "..\TiposD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormSysacad", "..\FormSysacad\FormSysacad.csproj", "{B342BD16-AAAC-4600-B18F-0BE72CCC36DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoriosUtils", "AccesoriosUtils\AccesoriosUtils.csproj", "{E59BA5A2-A434-45BD-B4C6-160E3FB4E323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccesoriosUtils", "AccesoriosUtils\AccesoriosUtils.csproj", "{E59BA5A2-A434-45BD-B4C6-160E3FB4E323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cursos", "Cursos\Cursos.csproj", "{07D03CDB-4C27-4DF4-8889-0A211B07AE01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{E59BA5A2-A434-45BD-B4C6-160E3FB4E323}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E59BA5A2-A434-45BD-B4C6-160E3FB4E323}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E59BA5A2-A434-45BD-B4C6-160E3FB4E323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07D03CDB-4C27-4DF4-8889-0A211B07AE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07D03CDB-4C27-4DF4-8889-0A211B07AE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07D03CDB-4C27-4DF4-8889-0A211B07AE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07D03CDB-4C27-4DF4-8889-0A211B07AE01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

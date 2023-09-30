@@ -64,7 +64,7 @@ namespace FormSysacad
             string legajo = textBoxLegajo.Text;
             string contra = textBoxContrasenia.Text;
 
-            List<Usuario> listaDeUsuarios = ReadStreamJSON("usuarios.json");
+            List<Usuario> listaDeUsuarios = ReadStreamJSON<Usuario>("usuarios.json");
 
             if (listaDeUsuarios == null)
             {

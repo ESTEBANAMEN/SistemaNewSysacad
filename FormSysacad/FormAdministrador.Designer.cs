@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdministrador));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelNegro = new Panel();
             imagenUTNFraUno = new PictureBox();
             TituloDelPrograma = new Label();
@@ -63,6 +66,24 @@
             buttonenviarAlMailYSalir = new Button();
             labelMensajePanelExitoAlGenerar = new Label();
             pictureBoxGrande = new PictureBox();
+            panelGestionarCursos = new Panel();
+            buttonFinalizarEdicion = new Button();
+            buttonEditarCurso = new Button();
+            labelCupoCurso = new Label();
+            labelDescripcionCurso = new Label();
+            labelCodigoCurso = new Label();
+            labelNombreCurso = new Label();
+            buttonBorrar = new Button();
+            buttonAgregar = new Button();
+            textBoxCupoCurso = new TextBox();
+            textBoxDescripcionCurso = new TextBox();
+            textBoxCodigoCurso = new TextBox();
+            textBoxNombreCurso = new TextBox();
+            dataGridCursos = new DataGridView();
+            ColumnNombre = new DataGridViewTextBoxColumn();
+            ColumnCodigo = new DataGridViewTextBoxColumn();
+            ColumnDescripcion = new DataGridViewTextBoxColumn();
+            ColumnCupo = new DataGridViewTextBoxColumn();
             panelNegro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imagenUTNFraUno).BeginInit();
             panelOpcionesAdministrador.SuspendLayout();
@@ -70,6 +91,8 @@
             panelExitoAlGenerar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUtnavellaneda).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGrande).BeginInit();
+            panelGestionarCursos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridCursos).BeginInit();
             SuspendLayout();
             // 
             // panelNegro
@@ -80,7 +103,7 @@
             panelNegro.Dock = DockStyle.Top;
             panelNegro.Location = new Point(15, 0);
             panelNegro.Name = "panelNegro";
-            panelNegro.Size = new Size(1280, 85);
+            panelNegro.Size = new Size(1344, 85);
             panelNegro.TabIndex = 12;
             // 
             // imagenUTNFraUno
@@ -97,10 +120,10 @@
             // 
             TituloDelPrograma.Anchor = AnchorStyles.None;
             TituloDelPrograma.AutoSize = true;
-            TituloDelPrograma.BackColor = Color.White;
+            TituloDelPrograma.BackColor = SystemColors.InactiveCaption;
             TituloDelPrograma.Font = new Font("Impact", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
             TituloDelPrograma.ForeColor = Color.OrangeRed;
-            TituloDelPrograma.Location = new Point(282, 9);
+            TituloDelPrograma.Location = new Point(285, 9);
             TituloDelPrograma.Name = "TituloDelPrograma";
             TituloDelPrograma.Size = new Size(814, 59);
             TituloDelPrograma.TabIndex = 0;
@@ -113,7 +136,7 @@
             panelInferior.Dock = DockStyle.Bottom;
             panelInferior.Location = new Point(15, 573);
             panelInferior.Name = "panelInferior";
-            panelInferior.Size = new Size(1280, 15);
+            panelInferior.Size = new Size(1344, 15);
             panelInferior.TabIndex = 15;
             // 
             // panelNegroIzquierda
@@ -129,7 +152,7 @@
             // 
             panelNegroDerecha.BackColor = Color.RoyalBlue;
             panelNegroDerecha.Dock = DockStyle.Right;
-            panelNegroDerecha.Location = new Point(1295, 0);
+            panelNegroDerecha.Location = new Point(1359, 0);
             panelNegroDerecha.Name = "panelNegroDerecha";
             panelNegroDerecha.Size = new Size(15, 588);
             panelNegroDerecha.TabIndex = 13;
@@ -139,7 +162,7 @@
             labelSeleccionDeOpcionAdministrador.Anchor = AnchorStyles.None;
             labelSeleccionDeOpcionAdministrador.AutoSize = true;
             labelSeleccionDeOpcionAdministrador.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSeleccionDeOpcionAdministrador.Location = new Point(483, 112);
+            labelSeleccionDeOpcionAdministrador.Location = new Point(515, 112);
             labelSeleccionDeOpcionAdministrador.Name = "labelSeleccionDeOpcionAdministrador";
             labelSeleccionDeOpcionAdministrador.Size = new Size(346, 24);
             labelSeleccionDeOpcionAdministrador.TabIndex = 16;
@@ -154,7 +177,7 @@
             buttonSeleccionDeOpcionAdministrador.Cursor = Cursors.Hand;
             buttonSeleccionDeOpcionAdministrador.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSeleccionDeOpcionAdministrador.ImageAlign = ContentAlignment.MiddleRight;
-            buttonSeleccionDeOpcionAdministrador.Location = new Point(448, 139);
+            buttonSeleccionDeOpcionAdministrador.Location = new Point(480, 139);
             buttonSeleccionDeOpcionAdministrador.Name = "buttonSeleccionDeOpcionAdministrador";
             buttonSeleccionDeOpcionAdministrador.Size = new Size(417, 33);
             buttonSeleccionDeOpcionAdministrador.TabIndex = 17;
@@ -169,7 +192,7 @@
             panelOpcionesAdministrador.AutoSize = true;
             panelOpcionesAdministrador.Controls.Add(buttonRegistrarEstudiante);
             panelOpcionesAdministrador.Controls.Add(buttonGestionarCursos);
-            panelOpcionesAdministrador.Location = new Point(448, 169);
+            panelOpcionesAdministrador.Location = new Point(480, 169);
             panelOpcionesAdministrador.Name = "panelOpcionesAdministrador";
             panelOpcionesAdministrador.Size = new Size(417, 71);
             panelOpcionesAdministrador.TabIndex = 18;
@@ -229,7 +252,7 @@
             panelRegistrarEstudiante.Controls.Add(labelFormularioDNI);
             panelRegistrarEstudiante.Controls.Add(labelFormularioNombre);
             panelRegistrarEstudiante.Controls.Add(labelTituloFormularioDeRegistro);
-            panelRegistrarEstudiante.Location = new Point(70, 246);
+            panelRegistrarEstudiante.Location = new Point(102, 246);
             panelRegistrarEstudiante.Name = "panelRegistrarEstudiante";
             panelRegistrarEstudiante.Size = new Size(1174, 323);
             panelRegistrarEstudiante.TabIndex = 19;
@@ -412,7 +435,8 @@
             panelExitoAlGenerar.Controls.Add(pictureBoxUtnavellaneda);
             panelExitoAlGenerar.Controls.Add(buttonenviarAlMailYSalir);
             panelExitoAlGenerar.Controls.Add(labelMensajePanelExitoAlGenerar);
-            panelExitoAlGenerar.Location = new Point(70, 96);
+            panelExitoAlGenerar.Controls.Add(pictureBoxGrande);
+            panelExitoAlGenerar.Location = new Point(102, 96);
             panelExitoAlGenerar.Name = "panelExitoAlGenerar";
             panelExitoAlGenerar.Size = new Size(1174, 473);
             panelExitoAlGenerar.TabIndex = 20;
@@ -422,7 +446,7 @@
             // 
             pictureBoxUtnavellaneda.Anchor = AnchorStyles.None;
             pictureBoxUtnavellaneda.Image = (Image)resources.GetObject("pictureBoxUtnavellaneda.Image");
-            pictureBoxUtnavellaneda.Location = new Point(238, 281);
+            pictureBoxUtnavellaneda.Location = new Point(238, 276);
             pictureBoxUtnavellaneda.Name = "pictureBoxUtnavellaneda";
             pictureBoxUtnavellaneda.Size = new Size(696, 151);
             pictureBoxUtnavellaneda.SizeMode = PictureBoxSizeMode.Zoom;
@@ -434,7 +458,7 @@
             buttonenviarAlMailYSalir.Anchor = AnchorStyles.None;
             buttonenviarAlMailYSalir.AutoSize = true;
             buttonenviarAlMailYSalir.Font = new Font("Georgia", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonenviarAlMailYSalir.Location = new Point(238, 120);
+            buttonenviarAlMailYSalir.Location = new Point(238, 115);
             buttonenviarAlMailYSalir.Name = "buttonenviarAlMailYSalir";
             buttonenviarAlMailYSalir.Size = new Size(696, 129);
             buttonenviarAlMailYSalir.TabIndex = 1;
@@ -450,7 +474,7 @@
             labelMensajePanelExitoAlGenerar.BorderStyle = BorderStyle.Fixed3D;
             labelMensajePanelExitoAlGenerar.Font = new Font("Georgia", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point);
             labelMensajePanelExitoAlGenerar.ForeColor = Color.OrangeRed;
-            labelMensajePanelExitoAlGenerar.Location = new Point(238, 57);
+            labelMensajePanelExitoAlGenerar.Location = new Point(238, 52);
             labelMensajePanelExitoAlGenerar.Name = "labelMensajePanelExitoAlGenerar";
             labelMensajePanelExitoAlGenerar.Size = new Size(696, 53);
             labelMensajePanelExitoAlGenerar.TabIndex = 0;
@@ -458,19 +482,266 @@
             // 
             // pictureBoxGrande
             // 
+            pictureBoxGrande.Anchor = AnchorStyles.None;
             pictureBoxGrande.Image = (Image)resources.GetObject("pictureBoxGrande.Image");
-            pictureBoxGrande.Location = new Point(272, 236);
+            pictureBoxGrande.Location = new Point(195, 115);
             pictureBoxGrande.Name = "pictureBoxGrande";
             pictureBoxGrande.Size = new Size(814, 314);
             pictureBoxGrande.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxGrande.TabIndex = 21;
             pictureBoxGrande.TabStop = false;
             // 
+            // panelGestionarCursos
+            // 
+            panelGestionarCursos.AutoScroll = true;
+            panelGestionarCursos.AutoSize = true;
+            panelGestionarCursos.Controls.Add(buttonFinalizarEdicion);
+            panelGestionarCursos.Controls.Add(buttonEditarCurso);
+            panelGestionarCursos.Controls.Add(labelCupoCurso);
+            panelGestionarCursos.Controls.Add(labelDescripcionCurso);
+            panelGestionarCursos.Controls.Add(labelCodigoCurso);
+            panelGestionarCursos.Controls.Add(labelNombreCurso);
+            panelGestionarCursos.Controls.Add(buttonBorrar);
+            panelGestionarCursos.Controls.Add(buttonAgregar);
+            panelGestionarCursos.Controls.Add(textBoxCupoCurso);
+            panelGestionarCursos.Controls.Add(textBoxDescripcionCurso);
+            panelGestionarCursos.Controls.Add(textBoxCodigoCurso);
+            panelGestionarCursos.Controls.Add(textBoxNombreCurso);
+            panelGestionarCursos.Controls.Add(dataGridCursos);
+            panelGestionarCursos.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            panelGestionarCursos.Location = new Point(102, 246);
+            panelGestionarCursos.Name = "panelGestionarCursos";
+            panelGestionarCursos.Size = new Size(1173, 323);
+            panelGestionarCursos.TabIndex = 3;
+            panelGestionarCursos.Visible = false;
+            // 
+            // buttonFinalizarEdicion
+            // 
+            buttonFinalizarEdicion.Anchor = AnchorStyles.None;
+            buttonFinalizarEdicion.AutoSize = true;
+            buttonFinalizarEdicion.BackColor = Color.FromArgb(128, 128, 255);
+            buttonFinalizarEdicion.Cursor = Cursors.Hand;
+            buttonFinalizarEdicion.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonFinalizarEdicion.Location = new Point(885, 196);
+            buttonFinalizarEdicion.Name = "buttonFinalizarEdicion";
+            buttonFinalizarEdicion.Size = new Size(149, 119);
+            buttonFinalizarEdicion.TabIndex = 12;
+            buttonFinalizarEdicion.Text = "Finalizar Edición";
+            buttonFinalizarEdicion.UseVisualStyleBackColor = false;
+            buttonFinalizarEdicion.Visible = false;
+            buttonFinalizarEdicion.Click += buttonFinalizarEdicion_Click;
+            // 
+            // buttonEditarCurso
+            // 
+            buttonEditarCurso.Anchor = AnchorStyles.None;
+            buttonEditarCurso.AutoSize = true;
+            buttonEditarCurso.BackColor = Color.FromArgb(255, 255, 128);
+            buttonEditarCurso.Cursor = Cursors.Hand;
+            buttonEditarCurso.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEditarCurso.Location = new Point(748, 196);
+            buttonEditarCurso.Name = "buttonEditarCurso";
+            buttonEditarCurso.Size = new Size(127, 119);
+            buttonEditarCurso.TabIndex = 11;
+            buttonEditarCurso.Text = "Editar Curso";
+            buttonEditarCurso.UseVisualStyleBackColor = false;
+            buttonEditarCurso.Click += buttonEditarCurso_Click;
+            // 
+            // labelCupoCurso
+            // 
+            labelCupoCurso.Anchor = AnchorStyles.None;
+            labelCupoCurso.AutoSize = true;
+            labelCupoCurso.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelCupoCurso.Location = new Point(7, 293);
+            labelCupoCurso.Name = "labelCupoCurso";
+            labelCupoCurso.Size = new Size(121, 20);
+            labelCupoCurso.TabIndex = 10;
+            labelCupoCurso.Text = "Cupo Maximo:";
+            // 
+            // labelDescripcionCurso
+            // 
+            labelDescripcionCurso.Anchor = AnchorStyles.None;
+            labelDescripcionCurso.AutoSize = true;
+            labelDescripcionCurso.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelDescripcionCurso.Location = new Point(7, 261);
+            labelDescripcionCurso.Name = "labelDescripcionCurso";
+            labelDescripcionCurso.Size = new Size(179, 20);
+            labelDescripcionCurso.TabIndex = 9;
+            labelDescripcionCurso.Text = "Descripción del Curso:";
+            // 
+            // labelCodigoCurso
+            // 
+            labelCodigoCurso.Anchor = AnchorStyles.None;
+            labelCodigoCurso.AutoSize = true;
+            labelCodigoCurso.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelCodigoCurso.Location = new Point(7, 231);
+            labelCodigoCurso.Name = "labelCodigoCurso";
+            labelCodigoCurso.Size = new Size(142, 20);
+            labelCodigoCurso.TabIndex = 8;
+            labelCodigoCurso.Text = "Codigo del Curso:";
+            // 
+            // labelNombreCurso
+            // 
+            labelNombreCurso.Anchor = AnchorStyles.None;
+            labelNombreCurso.AutoSize = true;
+            labelNombreCurso.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelNombreCurso.Location = new Point(7, 201);
+            labelNombreCurso.Name = "labelNombreCurso";
+            labelNombreCurso.Size = new Size(151, 20);
+            labelNombreCurso.TabIndex = 7;
+            labelNombreCurso.Text = "Nombre del Curso:";
+            // 
+            // buttonBorrar
+            // 
+            buttonBorrar.Anchor = AnchorStyles.None;
+            buttonBorrar.AutoSize = true;
+            buttonBorrar.BackColor = Color.FromArgb(255, 128, 128);
+            buttonBorrar.Cursor = Cursors.Hand;
+            buttonBorrar.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonBorrar.Location = new Point(1040, 195);
+            buttonBorrar.Name = "buttonBorrar";
+            buttonBorrar.Size = new Size(127, 119);
+            buttonBorrar.TabIndex = 6;
+            buttonBorrar.Text = "Borrar Curso";
+            buttonBorrar.UseVisualStyleBackColor = false;
+            // 
+            // buttonAgregar
+            // 
+            buttonAgregar.Anchor = AnchorStyles.None;
+            buttonAgregar.AutoSize = true;
+            buttonAgregar.BackColor = Color.FromArgb(128, 255, 128);
+            buttonAgregar.Cursor = Cursors.Hand;
+            buttonAgregar.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonAgregar.Location = new Point(615, 196);
+            buttonAgregar.Name = "buttonAgregar";
+            buttonAgregar.Size = new Size(127, 119);
+            buttonAgregar.TabIndex = 5;
+            buttonAgregar.Text = "Agregar Curso";
+            buttonAgregar.UseVisualStyleBackColor = false;
+            buttonAgregar.Click += buttonAgregar_Click;
+            // 
+            // textBoxCupoCurso
+            // 
+            textBoxCupoCurso.Anchor = AnchorStyles.None;
+            textBoxCupoCurso.Cursor = Cursors.IBeam;
+            textBoxCupoCurso.Location = new Point(134, 287);
+            textBoxCupoCurso.Name = "textBoxCupoCurso";
+            textBoxCupoCurso.Size = new Size(460, 25);
+            textBoxCupoCurso.TabIndex = 4;
+            // 
+            // textBoxDescripcionCurso
+            // 
+            textBoxDescripcionCurso.Anchor = AnchorStyles.None;
+            textBoxDescripcionCurso.Cursor = Cursors.IBeam;
+            textBoxDescripcionCurso.Location = new Point(192, 256);
+            textBoxDescripcionCurso.Name = "textBoxDescripcionCurso";
+            textBoxDescripcionCurso.Size = new Size(402, 25);
+            textBoxDescripcionCurso.TabIndex = 3;
+            // 
+            // textBoxCodigoCurso
+            // 
+            textBoxCodigoCurso.Anchor = AnchorStyles.None;
+            textBoxCodigoCurso.Cursor = Cursors.IBeam;
+            textBoxCodigoCurso.Location = new Point(164, 226);
+            textBoxCodigoCurso.Name = "textBoxCodigoCurso";
+            textBoxCodigoCurso.Size = new Size(430, 25);
+            textBoxCodigoCurso.TabIndex = 2;
+            // 
+            // textBoxNombreCurso
+            // 
+            textBoxNombreCurso.Anchor = AnchorStyles.None;
+            textBoxNombreCurso.Cursor = Cursors.IBeam;
+            textBoxNombreCurso.Location = new Point(164, 196);
+            textBoxNombreCurso.Name = "textBoxNombreCurso";
+            textBoxNombreCurso.Size = new Size(430, 25);
+            textBoxNombreCurso.TabIndex = 1;
+            // 
+            // dataGridCursos
+            // 
+            dataGridCursos.AllowUserToAddRows = false;
+            dataGridCursos.AllowUserToDeleteRows = false;
+            dataGridCursos.Anchor = AnchorStyles.None;
+            dataGridCursos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridCursos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridCursos.BackgroundColor = Color.FromArgb(45, 66, 91);
+            dataGridCursos.BorderStyle = BorderStyle.Fixed3D;
+            dataGridCursos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.DarkBlue;
+            dataGridViewCellStyle1.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.InactiveBorder;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridCursos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridCursos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridCursos.Columns.AddRange(new DataGridViewColumn[] { ColumnNombre, ColumnCodigo, ColumnDescripcion, ColumnCupo });
+            dataGridCursos.EnableHeadersVisualStyles = false;
+            dataGridCursos.GridColor = Color.SteelBlue;
+            dataGridCursos.Location = new Point(0, 0);
+            dataGridCursos.Name = "dataGridCursos";
+            dataGridCursos.ReadOnly = true;
+            dataGridCursos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 66, 91);
+            dataGridViewCellStyle2.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridCursos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridCursos.RowHeadersVisible = false;
+            dataGridCursos.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(45, 66, 91);
+            dataGridViewCellStyle3.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridCursos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridCursos.RowTemplate.Height = 29;
+            dataGridCursos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridCursos.Size = new Size(1174, 188);
+            dataGridCursos.TabIndex = 0;
+            // 
+            // ColumnNombre
+            // 
+            ColumnNombre.FillWeight = 129.862076F;
+            ColumnNombre.HeaderText = "Nombre";
+            ColumnNombre.MinimumWidth = 15;
+            ColumnNombre.Name = "ColumnNombre";
+            ColumnNombre.ReadOnly = true;
+            // 
+            // ColumnCodigo
+            // 
+            ColumnCodigo.FillWeight = 28.7630768F;
+            ColumnCodigo.HeaderText = "Codigo";
+            ColumnCodigo.MinimumWidth = 14;
+            ColumnCodigo.Name = "ColumnCodigo";
+            ColumnCodigo.ReadOnly = true;
+            // 
+            // ColumnDescripcion
+            // 
+            ColumnDescripcion.FillWeight = 190.037964F;
+            ColumnDescripcion.HeaderText = "Descripción";
+            ColumnDescripcion.MinimumWidth = 6;
+            ColumnDescripcion.Name = "ColumnDescripcion";
+            ColumnDescripcion.ReadOnly = true;
+            // 
+            // ColumnCupo
+            // 
+            ColumnCupo.FillWeight = 51.3369F;
+            ColumnCupo.HeaderText = "Cupo Maximo";
+            ColumnCupo.MinimumWidth = 6;
+            ColumnCupo.Name = "ColumnCupo";
+            ColumnCupo.ReadOnly = true;
+            // 
             // FormAdministrador
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1310, 588);
+            BackColor = SystemColors.InactiveCaption;
+            ClientSize = new Size(1374, 588);
+            Controls.Add(panelGestionarCursos);
             Controls.Add(panelNegro);
             Controls.Add(panelInferior);
             Controls.Add(panelNegroIzquierda);
@@ -480,7 +751,6 @@
             Controls.Add(labelSeleccionDeOpcionAdministrador);
             Controls.Add(panelRegistrarEstudiante);
             Controls.Add(panelExitoAlGenerar);
-            Controls.Add(pictureBoxGrande);
             Name = "FormAdministrador";
             Text = "FormAdministrador";
             panelNegro.ResumeLayout(false);
@@ -494,6 +764,9 @@
             panelExitoAlGenerar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUtnavellaneda).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGrande).EndInit();
+            panelGestionarCursos.ResumeLayout(false);
+            panelGestionarCursos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridCursos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -534,5 +807,23 @@
         private Button buttonenviarAlMailYSalir;
         private PictureBox pictureBoxUtnavellaneda;
         private PictureBox pictureBoxGrande;
+        private Panel panelGestionarCursos;
+        private DataGridView dataGridCursos;
+        private TextBox textBoxCupoCurso;
+        private TextBox textBoxDescripcionCurso;
+        private TextBox textBoxCodigoCurso;
+        private TextBox textBoxNombreCurso;
+        private Button buttonBorrar;
+        private Button buttonAgregar;
+        private Label labelCupoCurso;
+        private Label labelDescripcionCurso;
+        private Label labelCodigoCurso;
+        private Label labelNombreCurso;
+        private DataGridViewTextBoxColumn ColumnNombre;
+        private DataGridViewTextBoxColumn ColumnCodigo;
+        private DataGridViewTextBoxColumn ColumnDescripcion;
+        private DataGridViewTextBoxColumn ColumnCupo;
+        private Button buttonEditarCurso;
+        private Button buttonFinalizarEdicion;
     }
 }

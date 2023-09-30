@@ -6,7 +6,7 @@ namespace AccesoriosUtils
     {
         public bool CorroborarTextoYEspacio(string texto)
         {
-            Regex regex = new Regex("^[a-zA-Z\\s]+$");
+            Regex regex = new Regex("^[a-zA-Z\\s/]+$");
             return regex.IsMatch(texto);
         }
 
@@ -16,9 +16,15 @@ namespace AccesoriosUtils
             return regex.IsMatch(datoNumerico);
         }
 
-        public bool CorroborarTextoConNumero(string textoConNumero)
+        public bool CorroborarTextoConNumeroConEspacio(string textoConNumero)
         {
             Regex regex = new Regex("^[a-zA-Z\\s]+ \\d{1,5}$");
+            return regex.IsMatch(textoConNumero);
+        }
+
+        public bool CorroborarTextoConNumeroSinEspacio(string textoConNumero)
+        {
+            Regex regex = new Regex("^[a-zA-Z0-9]+$");
             return regex.IsMatch(textoConNumero);
         }
 
