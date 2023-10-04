@@ -4,10 +4,11 @@ using TiposDeUsuario;
 using static TiposDeUsuario.Administrador;
 
 namespace FormSysacad
-{
+{   
     public partial class FormPrograma : Form
     {
         private string? _usuario;
+        private Usuario estudiante;
 
         public FormPrograma()
         {
@@ -71,32 +72,59 @@ namespace FormSysacad
                 listaDeUsuarios = new List<Usuario>();
             }
 
+            bool usuarioEncontrado = false;
+
             switch (_usuario)
             {
                 case "Administrador":
                     foreach (Usuario usuario in listaDeUsuarios)
                     {
-                        if (usuario.Legajo == legajo && usuario.Contrasenia == contra)
+                        if (usuario.Legajo == legajo && usuario.Contrasenia == contra && usuario.TipoDeUsuario == "Administrador")
                         {
+                            usuarioEncontrado = true;
                             labelErrorIdContra.Visible = false;
                             FormAdministrador formAdmin = new FormAdministrador();
                             formAdmin.Show();
                             break;
-                        }
-                        else
-                        {
-                            labelErrorIdContra.Visible = true;
                         }
                     }
                     break;
                 case "Profesor":
                     break;
                 case "Estudiante":
+                    foreach (Usuario usuario in listaDeUsuarios)
+                    {
+                        if (usuario.Legajo == legajo && usuario.Contrasenia == contra && usuario.TipoDeUsuario == "Estudiante")
+                        {
+                            estudiante = usuario;
+                            usuarioEncontrado = true;
+                            labelErrorIdContra.Visible = false;
+                            FormEstudiante formEstudiante = new FormEstudiante();
+                            formEstudiante.Show();
+                        }
+                    }
                     break;
                 default:
-                    labelErrorIdContra.Visible = true;
                     break;
             }
+
+            if (!usuarioEncontrado)
+            {
+                MostrarMensajeError();
+            }
         }
+
+
+        private void MostrarMensajeError()
+        {
+            MessageBox.Show("¡Error!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            labelErrorIdContra.Visible = true;
+        }
+
+        public Usuario RetornarEstudiante()
+        {
+            return estudiante;
+        }
+
     }
 }

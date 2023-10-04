@@ -493,6 +493,7 @@
             // 
             // panelGestionarCursos
             // 
+            panelGestionarCursos.Anchor = AnchorStyles.None;
             panelGestionarCursos.AutoScroll = true;
             panelGestionarCursos.AutoSize = true;
             panelGestionarCursos.Controls.Add(buttonFinalizarEdicion);
@@ -603,6 +604,7 @@
             buttonBorrar.TabIndex = 6;
             buttonBorrar.Text = "Borrar Curso";
             buttonBorrar.UseVisualStyleBackColor = false;
+            buttonBorrar.Click += buttonBorrar_Click;
             // 
             // buttonAgregar
             // 

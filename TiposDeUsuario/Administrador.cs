@@ -19,7 +19,7 @@ namespace TiposDeUsuario
 
         }
         public Administrador(string nombreCompleto, string documento, string direccion, string numeroTelefono,
-                             string correo, string legajo, string contra, string tipoDeUsuario) : base(nombreCompleto,
+                             string correo, string legajo, string contra, string tipoDeUsuario) : base (nombreCompleto,
                              documento, direccion, numeroTelefono, correo, legajo, contra, tipoDeUsuario)
         {
             NombreCompleto = nombreCompleto;
@@ -75,8 +75,7 @@ namespace TiposDeUsuario
 
             foreach (Curso cursoEnLista in listaDeCursos)
             {
-                if (curso.Nombre == cursoEnLista.Nombre ||
-                    curso.Codigo == cursoEnLista.Codigo)
+                if (curso.Nombre == cursoEnLista.Nombre || curso.Codigo == cursoEnLista.Codigo)
                 {
                     cursoExistente = true;
                     break;

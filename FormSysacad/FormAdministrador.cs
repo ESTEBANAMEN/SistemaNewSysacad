@@ -40,7 +40,6 @@ namespace FormSysacad
             if (!panelOpcionesAdministrador.Visible)
             {
                 panelOpcionesAdministrador.Visible = true;
-
             }
             else
             {
@@ -183,13 +182,8 @@ namespace FormSysacad
 
         private void RellenarTablaDeCurso()
         {
-            List<Curso> listaDeCursos = new List<Curso>();
-            listaDeCursos = Administrador.ReadStreamJSON<Curso>("cursos.json");
+            List<Curso> listaDeCursos = LeerCursosDesdeArchivo();
 
-            if (listaDeCursos == null)
-            {
-                listaDeCursos = new List<Curso>();
-            }
             dataGridCursos.Columns.Clear();
 
             dataGridCursos.DataSource = listaDeCursos;
@@ -197,14 +191,19 @@ namespace FormSysacad
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            if (RegistrarCursoPorFormulario())
+            Curso curso = new Curso(textBoxNombreCurso.Text,
+                                         textBoxCodigoCurso.Text,
+                                         textBoxDescripcionCurso.Text,
+                                         textBoxCupoCurso.Text);
+
+            if (RegistrarCursoPorFormulario(curso))
             {
                 RellenarTablaDeCurso();
                 LimpiarCampos();
             }
         }
 
-        private bool CorroborarCamposCorrectosCursos(string nombre, string codigo, string descripcion, string cupo)
+        private bool CorroborarCamposCorrectosCursos(Curso curso)
         {
             bool datosCorrectos = true;
             Accesorios accesorios = new Accesorios();
@@ -223,26 +222,22 @@ namespace FormSysacad
                     etiqueta.ForeColor = Color.Black;
                 }
             }
-            VerificarCampo(!string.IsNullOrEmpty(nombre) && accesorios.CorroborarTextoYEspacio(nombre), textBoxNombreCurso, labelNombreCurso);
-            VerificarCampo(!string.IsNullOrEmpty(codigo) && accesorios.CorroborarTextoConNumeroSinEspacio(codigo), textBoxCodigoCurso, labelCodigoCurso);
-            VerificarCampo(!string.IsNullOrEmpty(descripcion) && accesorios.CorroborarTextoYEspacio(descripcion), textBoxDescripcionCurso, labelDescripcionCurso);
-            VerificarCampo(!string.IsNullOrEmpty(cupo) && accesorios.CorroborarNumerico(cupo), textBoxCupoCurso, labelCupoCurso);
+
+            VerificarCampo(!string.IsNullOrEmpty(curso.Nombre) && accesorios.CorroborarTextoYEspacio(curso.Nombre), textBoxNombreCurso, labelNombreCurso);
+            VerificarCampo(!string.IsNullOrEmpty(curso.Codigo) && accesorios.CorroborarTextoConNumeroSinEspacio(curso.Codigo), textBoxCodigoCurso, labelCodigoCurso);
+            VerificarCampo(!string.IsNullOrEmpty(curso.Descripcion) && accesorios.CorroborarTextoYEspacio(curso.Descripcion), textBoxDescripcionCurso, labelDescripcionCurso);
+            VerificarCampo(!string.IsNullOrEmpty(curso.CupoMaximo) && accesorios.CorroborarNumerico(curso.CupoMaximo), textBoxCupoCurso, labelCupoCurso);
+
             return datosCorrectos;
         }
 
-        private bool RegistrarCursoPorFormulario()
+
+        private bool RegistrarCursoPorFormulario(Curso curso)
         {
             bool registrado = false;
             Administrador admin = new Administrador();
-            Curso curso = new Curso(textBoxNombreCurso.Text,
-                                         textBoxCodigoCurso.Text,
-                                         textBoxDescripcionCurso.Text,
-                                         textBoxCupoCurso.Text);
 
-            if (CorroborarCamposCorrectosCursos(textBoxNombreCurso.Text,
-                                               textBoxCodigoCurso.Text,
-                                               textBoxDescripcionCurso.Text,
-                                               textBoxCupoCurso.Text))
+            if (CorroborarCamposCorrectosCursos(curso))
             {
                 registrado = admin.GestionarCurso(curso);
                 if (!registrado)
@@ -266,7 +261,6 @@ namespace FormSysacad
             buttonFinalizarEdicion.Visible = true;
             buttonAgregar.Visible = false;
 
-
             DataGridViewRow row = dataGridCursos.Rows[indiceDeRenglon];
             textBoxNombreCurso.Text = row.Cells[0].Value.ToString();
             textBoxCodigoCurso.Text = row.Cells[1].Value.ToString();
@@ -276,24 +270,23 @@ namespace FormSysacad
 
         private void buttonFinalizarEdicion_Click(object sender, EventArgs e)
         {
-            List<Curso> listaDeCursos = new List<Curso>();
-            listaDeCursos = Administrador.ReadStreamJSON<Curso>("cursos.json");
-            if (listaDeCursos == null)
-            {
-                listaDeCursos = new List<Curso>();
-            }
+            List<Curso> listaDeCursos = LeerCursosDesdeArchivo();
 
             Curso curso = new Curso(textBoxNombreCurso.Text,
                                     textBoxCodigoCurso.Text,
                                     textBoxDescripcionCurso.Text,
                                     textBoxCupoCurso.Text);
 
-            listaDeCursos[indiceDeRenglon] = curso;
-            Administrador.WriteStreamJSON<Curso>("cursos.json", listaDeCursos);
-            RellenarTablaDeCurso();
-            buttonFinalizarEdicion.Visible = false;
-            buttonAgregar.Visible = true;
-            LimpiarCampos();
+
+            if (CorroborarCamposCorrectosCursos(curso))
+            {
+                listaDeCursos[indiceDeRenglon] = curso;
+                Administrador.WriteStreamJSON<Curso>("cursos.json", listaDeCursos);
+                RellenarTablaDeCurso();
+                buttonFinalizarEdicion.Visible = false;
+                buttonAgregar.Visible = true;
+                LimpiarCampos();
+            }
         }
 
         private void LimpiarCampos()
@@ -302,6 +295,29 @@ namespace FormSysacad
             textBoxCodigoCurso.Text = "";
             textBoxDescripcionCurso.Text = "";
             textBoxCupoCurso.Text = "";
+        }
+
+        private void buttonBorrar_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta = MessageBox.Show("¿Estás seguro de que deseas eliminar este elemento?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                List<Curso> listaDeCursos = LeerCursosDesdeArchivo();
+                listaDeCursos.RemoveAt(indiceDeRenglon);
+                Administrador.WriteStreamJSON<Curso>("cursos.json", listaDeCursos);
+                RellenarTablaDeCurso();
+            }
+        }
+
+        private List<Curso> LeerCursosDesdeArchivo()
+        {
+            List<Curso> listaDeCursos = Administrador.ReadStreamJSON<Curso>("cursos.json");
+            if (listaDeCursos == null)
+            {
+                listaDeCursos = new List<Curso>();
+            }
+            return listaDeCursos;
         }
     }
 }
