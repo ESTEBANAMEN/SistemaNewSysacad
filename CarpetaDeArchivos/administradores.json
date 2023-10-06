@@ -1,0 +1,22 @@
+[
+  {
+    "NombreCompleto": "Esteban Amen",
+    "DNI": "38837906",
+    "Direccion": "Murature 3925",
+    "NumeroTelefono": "1157587325",
+    "CorreoElectronico": "stebanamen@gmail.com",
+    "Legajo": "114389",
+    "Contrasenia": "1234",
+    "TipoDeUsuario": "Administrador"
+  },
+  {
+    "NombreCompleto": "Papafritas",
+    "DNI": "12345567",
+    "Direccion": "popo 123",
+    "NumeroTelefono": "9191918181",
+    "CorreoElectronico": "holahola@gmail.com",
+    "Legajo": "110208",
+    "Contrasenia": "1234",
+    "TipoDeUsuario": "Administrador"
+  }
+]

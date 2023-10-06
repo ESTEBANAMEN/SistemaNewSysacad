@@ -1,0 +1,42 @@
+[
+  {
+    "CursosInscritos": [
+      "Programacion y Laboratorio Uno",
+      "Matematicas",
+      "PruebaDos",
+      "Pruebas",
+      "Programaci\u00F3n",
+      "PruebaUno"
+    ],
+    "NombreCompleto": "Ramiro",
+    "DNI": "31234567",
+    "Direccion": "olazabal 234",
+    "NumeroTelefono": "1234456678",
+    "CorreoElectronico": "ramiro@gmail.com",
+    "Legajo": "117902",
+    "Contrasenia": "1234",
+    "TipoDeUsuario": "Estudiante"
+  },
+  {
+    "CursosInscritos": null,
+    "NombreCompleto": "Loco",
+    "DNI": "12345678",
+    "Direccion": "toreto 123",
+    "NumeroTelefono": "1145678906",
+    "CorreoElectronico": "hola@gmial.com",
+    "Legajo": "119460",
+    "Contrasenia": "1234",
+    "TipoDeUsuario": "Estudiante"
+  },
+  {
+    "CursosInscritos": null,
+    "NombreCompleto": "mandingo",
+    "DNI": "123456789907",
+    "Direccion": "popo 123",
+    "NumeroTelefono": "818172373467",
+    "CorreoElectronico": "jyhagsd@hjkasd.com",
+    "Legajo": "111486",
+    "Contrasenia": "1234",
+    "TipoDeUsuario": "Estudiante"
+  }
+]

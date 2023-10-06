@@ -3,31 +3,31 @@
     "Nombre": "Programacion y Laboratorio Uno",
     "Codigo": "pyLUno",
     "Descripcion": "TurnosMananaTardeNoche",
-    "CupoMaximo": "145"
+    "CupoMaximo": "131"
   },
   {
     "Nombre": "Matematicas",
     "Codigo": "ms 123",
     "Descripcion": "TurnoMaana",
-    "CupoMaximo": "10"
+    "CupoMaximo": "1"
   },
   {
     "Nombre": "PruebaDos",
     "Codigo": "Prueba2",
     "Descripcion": "pepe",
-    "CupoMaximo": "122"
+    "CupoMaximo": "108"
   },
   {
     "Nombre": "Pruebas",
     "Codigo": "Pruebas",
     "Descripcion": "Prueba",
-    "CupoMaximo": "998"
+    "CupoMaximo": "984"
   },
   {
     "Nombre": "Programaci\u00F3n",
     "Codigo": "pyl1",
     "Descripcion": "Turnos Ma\u00F1ana/Tarde/Noche",
-    "CupoMaximo": "149"
+    "CupoMaximo": "135"
   },
   {
     "Nombre": "PruebaUno",

@@ -35,9 +35,9 @@ namespace TiposDeUsuario
             listaDeCursos = new List<Curso>();
         }
 
-        public bool RegistrarAdministradorOEstudiante(Usuario usuario)
+        public bool RegistrarAdministrador(Usuario usuario)
         {
-            listaDeUsuarios = ReadStreamJSON<Usuario>("usuarios.json");
+            listaDeUsuarios = ReadStreamJSON<Usuario>("administradores.json");
             bool usuarioExistente = false;
 
             if (listaDeUsuarios == null)
@@ -57,7 +57,35 @@ namespace TiposDeUsuario
             if (!usuarioExistente)
             {
                 listaDeUsuarios.Add(usuario);
-                WriteStreamJSON("usuarios.json", listaDeUsuarios);
+                WriteStreamJSON("administradores.json", listaDeUsuarios);
+            }
+
+            return !usuarioExistente;
+        }
+
+        public bool RegistrarEstudiante(Usuario usuario)
+        {
+            listaDeUsuarios = ReadStreamJSON<Usuario>("estudiantes.json");
+            bool usuarioExistente = false;
+
+            if (listaDeUsuarios == null)
+            {
+                listaDeUsuarios = new List<Usuario>();
+            }
+
+            foreach (Usuario user in listaDeUsuarios)
+            {
+                if (user.DNI == usuario.DNI || user.CorreoElectronico == usuario.CorreoElectronico)
+                {
+                    usuarioExistente = true;
+                    break;
+                }
+            }
+
+            if (!usuarioExistente)
+            {
+                listaDeUsuarios.Add(usuario);
+                WriteStreamJSON("estudiantes.json", listaDeUsuarios);
             }
 
             return !usuarioExistente;

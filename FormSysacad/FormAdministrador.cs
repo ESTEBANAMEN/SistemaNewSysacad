@@ -119,7 +119,14 @@ namespace FormSysacad
                                 textBoxContraProv.Text,
                                 textBoxTipo.Text))
             {
-                registrado = nuevoUsuario.RegistrarAdministradorOEstudiante(nuevoUsuario);
+                if (textBoxTipo.Text == "Administrador")
+                {
+                    registrado = nuevoUsuario.RegistrarAdministrador(nuevoUsuario);
+                }
+                else
+                {
+                    registrado = nuevoUsuario.RegistrarEstudiante(nuevoUsuario);
+                }
                 if (!registrado)
                 {
                     labelErrorFormularioRegsitrarEstudiante.Text = "¡Usuario existente!";
@@ -141,6 +148,7 @@ namespace FormSysacad
                 panelRegistrarEstudiante.Visible = false;
                 labelSeleccionDeOpcionAdministrador.Visible = false;
                 buttonSeleccionDeOpcionAdministrador.Visible = false;
+                pictureBoxGrande.Visible = false;
                 panelExitoAlGenerar.Visible = true;
                 buttonenviarAlMailYSalir.Text = $"Enviar datos al correo {textBoxCorreo.Text} y cerrar";
             }
@@ -149,15 +157,20 @@ namespace FormSysacad
         private string CorroborarExistenciaDeLegajo(int legajo)
         {
             string legajoParseado = legajo.ToString();
-            List<Usuario> listaDeUsuarios = new List<Usuario>();
-            listaDeUsuarios = Administrador.ReadStreamJSON<Usuario>("usuarios.json");
+            List<Usuario> listaDeAdministradores = Administrador.ReadStreamJSON<Usuario>("administradores.json");
+            List<Usuario> listaDeEstudiantes = Administrador.ReadStreamJSON<Usuario>("estudiantes.json");
 
-            if (listaDeUsuarios == null)
+            if (listaDeAdministradores == null)
             {
-                listaDeUsuarios = new List<Usuario>();
+                listaDeAdministradores = new List<Usuario>();
             }
 
-            foreach (Usuario user in listaDeUsuarios)
+            if (listaDeEstudiantes == null)
+            {
+                listaDeEstudiantes = new List<Usuario>();
+            }
+
+            foreach (Usuario user in listaDeAdministradores.Concat(listaDeEstudiantes))
             {
                 if (legajoParseado == user.Legajo)
                 {
@@ -167,8 +180,10 @@ namespace FormSysacad
                     return legajoAutomatico;
                 }
             }
+
             return legajoParseado;
         }
+
 
         private void buttonenviarAlMailYSalir_Click(object sender, EventArgs e)
         {

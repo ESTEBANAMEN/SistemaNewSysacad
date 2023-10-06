@@ -9,14 +9,14 @@ namespace TiposDeUsuario
 {
     public class Estudiante : Usuario
     {
-        public List<Curso> CursosInscritos { get; set; }
+        public List<string> CursosInscritos { get; set; }
 
         public Estudiante()
         {
 
         }
         public Estudiante(string nombreCompleto, string documento, string direccion, string numeroTelefono,
-                          string correo, string legajo, string contra, string tipoDeUsuario) : base(nombreCompleto,
+                          string correo, string legajo, string contra, string tipoDeUsuario, List<string> cursos) : base(nombreCompleto,
                           documento, direccion, numeroTelefono, correo, legajo, contra, tipoDeUsuario)
         {
             NombreCompleto = nombreCompleto;
@@ -27,8 +27,7 @@ namespace TiposDeUsuario
             Legajo = legajo;
             Contrasenia = contra;
             TipoDeUsuario = tipoDeUsuario;
-
-            CursosInscritos = new List<Curso>();
+            CursosInscritos = cursos;
         }
     }
 }

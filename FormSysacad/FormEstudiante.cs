@@ -16,10 +16,14 @@ namespace FormSysacad
     public partial class FormEstudiante : Form
     {
         private List<Curso> listaDeCursos;
+        private FormPrograma programaForm;
+        
 
-        public FormEstudiante()
+        public FormEstudiante(FormPrograma programaForm)
         {
             InitializeComponent();
+
+            this.programaForm = programaForm;
 
             listaDeCursos = LeerCursosDesdeArchivo();
 
@@ -114,55 +118,40 @@ namespace FormSysacad
             }
             else
             {
-                FormPrograma programaForm = new FormPrograma();
-                Estudiante estudiante = (Estudiante)programaForm.RetornarEstudiante();
+                Estudiante estudianteActual = programaForm.RetornarEstudiante();
+                List<string> listaDeNombres = new List<string>();
 
-                List<Usuario> listaDeUsuarios = Administrador.ReadStreamJSON<Usuario>("usuarios.json");
-
-                if (listaDeUsuarios == null)
+                foreach (object item in checkedListBoxMaterias.Items)
                 {
-                    listaDeUsuarios = new List<Usuario>();
+                    listaDeNombres.Add(item.ToString());
                 }
 
-                List<string> cursosSeleccionados = new List<string>();
-                for (int i = 0; i < checkedListBoxMaterias.Items.Count; i++)
+                estudianteActual.CursosInscritos = listaDeNombres;
+
+                List<Estudiante> listaDeEstudiantes = Administrador.ReadStreamJSON<Estudiante>("estudiantes.json");
+
+                if(listaDeEstudiantes == null)
                 {
-                    if (checkedListBoxMaterias.GetItemChecked(i))
+                    listaDeEstudiantes= new List<Estudiante>();
+                }
+
+                int contador = 0;
+                int index = 0;
+                foreach (Estudiante estudiante in listaDeEstudiantes)
+                {
+                    if (estudiante.Legajo == estudianteActual.Legajo)
                     {
-                        cursosSeleccionados.Add(checkedListBoxMaterias.Items[i].ToString());
+                        index = contador;
+                        break;
                     }
+                    contador++;
                 }
 
-                foreach (Usuario usuario in listaDeUsuarios)
-                {
-                    if (usuario.Legajo == estudiante.Legajo)
-                    {
-                        List<Curso> cursosParaInscribir = new List<Curso>();
+                listaDeEstudiantes[index] = estudianteActual;
 
-                        foreach (string nombreCurso in cursosSeleccionados)
-                        {
-                            Curso cursoEncontrado = null;
-
-                            foreach (Curso curso in listaDeCursos)
-                            {
-                                if (curso.Nombre == nombreCurso)
-                                {
-                                    cursoEncontrado = curso;
-                                    break; 
-                                }
-                            }
-
-                            if (cursoEncontrado != null)
-                            {
-                                cursosParaInscribir.Add(cursoEncontrado);
-                            }
-                        }
-                        estudiante.CursosInscritos.AddRange(cursosParaInscribir);
-                    }
-                }
+                Administrador.WriteStreamJSON("estudiantes.json", listaDeEstudiantes);
             }
         }
-
 
         private bool CorroborarCupoDisponible()
         {

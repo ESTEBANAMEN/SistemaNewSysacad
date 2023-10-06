@@ -8,7 +8,7 @@ namespace FormSysacad
     public partial class FormPrograma : Form
     {
         private string? _usuario;
-        private Usuario estudiante;
+        private Estudiante estudianteRetorno;
 
         public FormPrograma()
         {
@@ -22,7 +22,7 @@ namespace FormSysacad
                                                 "114389",
                                                 "1234",
                                                 "Administrador");
-            superAdmin.RegistrarAdministradorOEstudiante(superAdmin);
+            superAdmin.RegistrarAdministrador(superAdmin);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,11 +65,13 @@ namespace FormSysacad
             string legajo = textBoxLegajo.Text;
             string contra = textBoxContrasenia.Text;
 
-            List<Usuario> listaDeUsuarios = ReadStreamJSON<Usuario>("usuarios.json");
+            List<Usuario> listaDeAdministradores = ReadStreamJSON<Usuario>("administradores.json");
+            List<Estudiante> listaDeEstudiantes = ReadStreamJSON<Estudiante>("estudiantes.json");
 
-            if (listaDeUsuarios == null)
+            if (listaDeAdministradores == null || listaDeEstudiantes == null)
             {
-                listaDeUsuarios = new List<Usuario>();
+                listaDeAdministradores = new List<Usuario>();
+                listaDeEstudiantes = new List<Estudiante>();
             }
 
             bool usuarioEncontrado = false;
@@ -77,7 +79,7 @@ namespace FormSysacad
             switch (_usuario)
             {
                 case "Administrador":
-                    foreach (Usuario usuario in listaDeUsuarios)
+                    foreach (Usuario usuario in listaDeAdministradores)
                     {
                         if (usuario.Legajo == legajo && usuario.Contrasenia == contra && usuario.TipoDeUsuario == "Administrador")
                         {
@@ -92,14 +94,14 @@ namespace FormSysacad
                 case "Profesor":
                     break;
                 case "Estudiante":
-                    foreach (Usuario usuario in listaDeUsuarios)
+                    foreach (Estudiante estudiante in listaDeEstudiantes)
                     {
-                        if (usuario.Legajo == legajo && usuario.Contrasenia == contra && usuario.TipoDeUsuario == "Estudiante")
+                        if (estudiante.Legajo == legajo && estudiante.Contrasenia == contra && estudiante.TipoDeUsuario == "Estudiante")
                         {
-                            estudiante = usuario;
+                            estudianteRetorno = estudiante;
                             usuarioEncontrado = true;
                             labelErrorIdContra.Visible = false;
-                            FormEstudiante formEstudiante = new FormEstudiante();
+                            FormEstudiante formEstudiante = new FormEstudiante(this);
                             formEstudiante.Show();
                         }
                     }
@@ -121,9 +123,9 @@ namespace FormSysacad
             labelErrorIdContra.Visible = true;
         }
 
-        public Usuario RetornarEstudiante()
+        public Estudiante RetornarEstudiante()
         {
-            return estudiante;
+            return estudianteRetorno;
         }
 
     }
