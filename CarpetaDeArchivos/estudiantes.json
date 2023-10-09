@@ -2,23 +2,34 @@
   {
     "CursosInscritos": [
       "Programacion y Laboratorio Uno",
-      "Matematicas",
-      "PruebaDos",
-      "Pruebas",
-      "Programaci\u00F3n",
-      "PruebaUno"
+      "Ingles",
+      "Ciencias Algoritmicas",
+      "Programacion y Laboratorio Dos",
+      "Programaci\u00F3n"
     ],
+    "PagosRealizados": {
+      "matricula": 1,
+      "cargos": 1,
+      "libros": 1,
+      "cuota": 1
+    },
     "NombreCompleto": "Ramiro",
-    "DNI": "31234567",
-    "Direccion": "olazabal 234",
-    "NumeroTelefono": "1234456678",
-    "CorreoElectronico": "ramiro@gmail.com",
+    "DNI": "12344556",
+    "Direccion": "lasksdlskds 123",
+    "NumeroTelefono": "123123123",
+    "CorreoElectronico": "jsjsjsjs@gmial.com",
     "Legajo": "117902",
     "Contrasenia": "1234",
     "TipoDeUsuario": "Estudiante"
   },
   {
-    "CursosInscritos": null,
+    "CursosInscritos": [],
+    "PagosRealizados": {
+      "matricula": 0,
+      "cargos": 0,
+      "libros": 0,
+      "cuota": 0
+    },
     "NombreCompleto": "Loco",
     "DNI": "12345678",
     "Direccion": "toreto 123",
@@ -29,13 +40,36 @@
     "TipoDeUsuario": "Estudiante"
   },
   {
-    "CursosInscritos": null,
+    "CursosInscritos": [],
+    "PagosRealizados": {
+      "matricula": 0,
+      "cargos": 0,
+      "libros": 0,
+      "cuota": 0
+    },
     "NombreCompleto": "mandingo",
     "DNI": "123456789907",
     "Direccion": "popo 123",
     "NumeroTelefono": "818172373467",
     "CorreoElectronico": "jyhagsd@hjkasd.com",
     "Legajo": "111486",
+    "Contrasenia": "1234",
+    "TipoDeUsuario": "Estudiante"
+  },
+  {
+    "CursosInscritos": [],
+    "PagosRealizados": {
+      "matricula": 0,
+      "cargos": 0,
+      "libros": 0,
+      "cuota": 0
+    },
+    "NombreCompleto": "elalumno",
+    "DNI": "323232322323232",
+    "Direccion": "popo 123",
+    "NumeroTelefono": "1154546565",
+    "CorreoElectronico": "popo@popo.popo",
+    "Legajo": "117247",
     "Contrasenia": "1234",
     "TipoDeUsuario": "Estudiante"
   }
