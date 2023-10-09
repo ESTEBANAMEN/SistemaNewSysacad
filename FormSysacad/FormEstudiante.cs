@@ -592,6 +592,8 @@ namespace FormSysacad
                     this.Close();
                     FormEstudiante formEstudiante = new FormEstudiante(programaForm);
                     formEstudiante.Show();
+                    FormComprobantePago formComprobanteDePago = new FormComprobantePago(estudianteActual.NombreCompleto, $"${totalAPagar}");
+                    formComprobanteDePago.Show();
                 }
                 else
                 {
