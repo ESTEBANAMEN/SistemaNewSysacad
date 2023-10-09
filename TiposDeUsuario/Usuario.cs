@@ -15,8 +15,15 @@ namespace TiposDeUsuario
         public string? NumeroTelefono { get; set; }
         public string? CorreoElectronico { get; set; }
         public string? Legajo { get; set; }
-        public string? Contrasenia { get; set; }
         public string? TipoDeUsuario { get; set; }
+
+        private string _contraseniaHash;
+
+        public string Contrasenia
+        {
+            get { return _contraseniaHash; }
+            set { _contraseniaHash = Hash.GetHash(value); }
+        }
 
         public Usuario()
         {
@@ -39,6 +46,20 @@ namespace TiposDeUsuario
             Legajo = legajo;
             Contrasenia = contra;
             TipoDeUsuario = tipoDeUsuario;
+        }
+    }
+
+    public class Hash
+    {
+        public static string GetHash(string password)
+        {
+            var hash = BCrypt.Net.BCrypt.EnhancedHashPassword(password, 8);
+            return hash;
+        }
+
+        public static bool ValidatePassword(string password, string hash)
+        {
+            return BCrypt.Net.BCrypt.EnhancedVerify(password, hash);
         }
     }
 }

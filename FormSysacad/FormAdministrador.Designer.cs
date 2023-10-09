@@ -103,7 +103,7 @@
             panelNegro.Dock = DockStyle.Top;
             panelNegro.Location = new Point(15, 0);
             panelNegro.Name = "panelNegro";
-            panelNegro.Size = new Size(1344, 85);
+            panelNegro.Size = new Size(1341, 85);
             panelNegro.TabIndex = 12;
             // 
             // imagenUTNFraUno
@@ -123,7 +123,7 @@
             TituloDelPrograma.BackColor = SystemColors.InactiveCaption;
             TituloDelPrograma.Font = new Font("Impact", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
             TituloDelPrograma.ForeColor = Color.OrangeRed;
-            TituloDelPrograma.Location = new Point(285, 9);
+            TituloDelPrograma.Location = new Point(283, 9);
             TituloDelPrograma.Name = "TituloDelPrograma";
             TituloDelPrograma.Size = new Size(814, 59);
             TituloDelPrograma.TabIndex = 0;
@@ -136,7 +136,7 @@
             panelInferior.Dock = DockStyle.Bottom;
             panelInferior.Location = new Point(15, 573);
             panelInferior.Name = "panelInferior";
-            panelInferior.Size = new Size(1344, 15);
+            panelInferior.Size = new Size(1341, 15);
             panelInferior.TabIndex = 15;
             // 
             // panelNegroIzquierda
@@ -152,7 +152,7 @@
             // 
             panelNegroDerecha.BackColor = Color.RoyalBlue;
             panelNegroDerecha.Dock = DockStyle.Right;
-            panelNegroDerecha.Location = new Point(1359, 0);
+            panelNegroDerecha.Location = new Point(1356, 0);
             panelNegroDerecha.Name = "panelNegroDerecha";
             panelNegroDerecha.Size = new Size(15, 588);
             panelNegroDerecha.TabIndex = 13;
@@ -162,7 +162,7 @@
             labelSeleccionDeOpcionAdministrador.Anchor = AnchorStyles.None;
             labelSeleccionDeOpcionAdministrador.AutoSize = true;
             labelSeleccionDeOpcionAdministrador.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSeleccionDeOpcionAdministrador.Location = new Point(515, 112);
+            labelSeleccionDeOpcionAdministrador.Location = new Point(513, 112);
             labelSeleccionDeOpcionAdministrador.Name = "labelSeleccionDeOpcionAdministrador";
             labelSeleccionDeOpcionAdministrador.Size = new Size(346, 24);
             labelSeleccionDeOpcionAdministrador.TabIndex = 16;
@@ -177,7 +177,7 @@
             buttonSeleccionDeOpcionAdministrador.Cursor = Cursors.Hand;
             buttonSeleccionDeOpcionAdministrador.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             buttonSeleccionDeOpcionAdministrador.ImageAlign = ContentAlignment.MiddleRight;
-            buttonSeleccionDeOpcionAdministrador.Location = new Point(480, 139);
+            buttonSeleccionDeOpcionAdministrador.Location = new Point(478, 139);
             buttonSeleccionDeOpcionAdministrador.Name = "buttonSeleccionDeOpcionAdministrador";
             buttonSeleccionDeOpcionAdministrador.Size = new Size(417, 33);
             buttonSeleccionDeOpcionAdministrador.TabIndex = 17;
@@ -192,7 +192,7 @@
             panelOpcionesAdministrador.AutoSize = true;
             panelOpcionesAdministrador.Controls.Add(buttonRegistrarEstudiante);
             panelOpcionesAdministrador.Controls.Add(buttonGestionarCursos);
-            panelOpcionesAdministrador.Location = new Point(480, 169);
+            panelOpcionesAdministrador.Location = new Point(478, 169);
             panelOpcionesAdministrador.Name = "panelOpcionesAdministrador";
             panelOpcionesAdministrador.Size = new Size(417, 71);
             panelOpcionesAdministrador.TabIndex = 18;
@@ -252,7 +252,7 @@
             panelRegistrarEstudiante.Controls.Add(labelFormularioDNI);
             panelRegistrarEstudiante.Controls.Add(labelFormularioNombre);
             panelRegistrarEstudiante.Controls.Add(labelTituloFormularioDeRegistro);
-            panelRegistrarEstudiante.Location = new Point(102, 246);
+            panelRegistrarEstudiante.Location = new Point(100, 246);
             panelRegistrarEstudiante.Name = "panelRegistrarEstudiante";
             panelRegistrarEstudiante.Size = new Size(1174, 323);
             panelRegistrarEstudiante.TabIndex = 19;
@@ -436,7 +436,7 @@
             panelExitoAlGenerar.Controls.Add(buttonenviarAlMailYSalir);
             panelExitoAlGenerar.Controls.Add(labelMensajePanelExitoAlGenerar);
             panelExitoAlGenerar.Controls.Add(pictureBoxGrande);
-            panelExitoAlGenerar.Location = new Point(102, 96);
+            panelExitoAlGenerar.Location = new Point(100, 96);
             panelExitoAlGenerar.Name = "panelExitoAlGenerar";
             panelExitoAlGenerar.Size = new Size(1174, 473);
             panelExitoAlGenerar.TabIndex = 20;
@@ -510,7 +510,7 @@
             panelGestionarCursos.Controls.Add(textBoxNombreCurso);
             panelGestionarCursos.Controls.Add(dataGridCursos);
             panelGestionarCursos.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            panelGestionarCursos.Location = new Point(102, 246);
+            panelGestionarCursos.Location = new Point(100, 246);
             panelGestionarCursos.Name = "panelGestionarCursos";
             panelGestionarCursos.Size = new Size(1173, 323);
             panelGestionarCursos.TabIndex = 3;
@@ -742,12 +742,12 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
-            ClientSize = new Size(1374, 588);
-            Controls.Add(panelGestionarCursos);
+            ClientSize = new Size(1371, 588);
             Controls.Add(panelNegro);
             Controls.Add(panelInferior);
             Controls.Add(panelNegroIzquierda);
             Controls.Add(panelNegroDerecha);
+            Controls.Add(panelGestionarCursos);
             Controls.Add(panelOpcionesAdministrador);
             Controls.Add(buttonSeleccionDeOpcionAdministrador);
             Controls.Add(labelSeleccionDeOpcionAdministrador);

@@ -4,9 +4,9 @@
     "Codigo": "pyLUno",
     "Descripcion": "TurnosMananaTardeNoche",
     "CupoMaximo": "110",
-    "Dia": "Martes",
+    "Dia": "Miercoles",
     "Horario": "18:30 a 20:30",
-    "Aula": "205"
+    "Aula": "106"
   },
   {
     "Nombre": "Matematicas",
@@ -14,8 +14,8 @@
     "Descripcion": "TurnoMaana",
     "CupoMaximo": "0",
     "Dia": "Martes",
-    "Horario": "18:30 a 20:30",
-    "Aula": "308"
+    "Horario": "20:30 a 22:30",
+    "Aula": "101"
   },
   {
     "Nombre": "Ingles",
@@ -24,7 +24,7 @@
     "CupoMaximo": "95",
     "Dia": "Miercoles",
     "Horario": "20:30 a 22:30",
-    "Aula": "106"
+    "Aula": "306"
   },
   {
     "Nombre": "Ciencias Algoritmicas",
@@ -33,16 +33,16 @@
     "CupoMaximo": "970",
     "Dia": "Lunes",
     "Horario": "20:30 a 22:30",
-    "Aula": "302"
+    "Aula": "104"
   },
   {
     "Nombre": "Programacion y Laboratorio Dos",
     "Codigo": "pylDos",
     "Descripcion": "niIdea",
     "CupoMaximo": "120",
-    "Dia": "Lunes",
+    "Dia": "Viernes",
     "Horario": "18:30 a 20:30",
-    "Aula": "105"
+    "Aula": "304"
   },
   {
     "Nombre": "PruebaUno",
@@ -59,7 +59,7 @@
     "Descripcion": "Turnos Ma\u00F1ana/Tarde/Noche",
     "CupoMaximo": "149",
     "Dia": "Martes",
-    "Horario": "20:30 a 22:30",
-    "Aula": "108"
+    "Horario": "18:30 a 20:30",
+    "Aula": "107"
   }
 ]

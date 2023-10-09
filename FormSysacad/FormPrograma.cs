@@ -1,5 +1,6 @@
 using System.Drawing.Text;
 using System.Security.Cryptography.Xml;
+using System.Security.Policy;
 using TiposDeUsuario;
 using static TiposDeUsuario.Administrador;
 
@@ -81,7 +82,7 @@ namespace FormSysacad
                 case "Administrador":
                     foreach (Usuario usuario in listaDeAdministradores)
                     {
-                        if (usuario.Legajo == legajo && usuario.Contrasenia == contra && usuario.TipoDeUsuario == "Administrador")
+                        if (usuario.Legajo == legajo && TiposDeUsuario.Hash.ValidatePassword(contra, usuario.Contrasenia) && usuario.TipoDeUsuario == "Administrador")
                         {
                             usuarioEncontrado = true;
                             labelErrorIdContra.Visible = false;
@@ -96,7 +97,7 @@ namespace FormSysacad
                 case "Estudiante":
                     foreach (Estudiante estudiante in listaDeEstudiantes)
                     {
-                        if (estudiante.Legajo == legajo && estudiante.Contrasenia == contra && estudiante.TipoDeUsuario == "Estudiante")
+                        if (estudiante.Legajo == legajo && TiposDeUsuario.Hash.ValidatePassword(contra, estudiante.Contrasenia) && estudiante.TipoDeUsuario == "Estudiante")
                         {
                             estudianteRetorno = estudiante;
                             usuarioEncontrado = true;
@@ -117,6 +118,7 @@ namespace FormSysacad
         }
 
 
+
         private void MostrarMensajeError()
         {
             MessageBox.Show("¡Error!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -127,6 +129,6 @@ namespace FormSysacad
         {
             return estudianteRetorno;
         }
-
     }
+
 }

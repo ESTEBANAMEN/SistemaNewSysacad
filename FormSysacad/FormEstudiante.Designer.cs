@@ -70,13 +70,6 @@
             labelTituloLegajo = new Label();
             labelTituloNombre = new Label();
             panelRealizarPagos = new Panel();
-            panelDatosCuenta = new Panel();
-            textBoxRazon = new TextBox();
-            labelRazon = new Label();
-            textBoxNumeroDeCuenta = new TextBox();
-            labelNumeroDeCuenta = new Label();
-            textBoxNombreDeBanco = new TextBox();
-            labelNombreDeBanco = new Label();
             buttonPagar = new Button();
             buttonCalcularValorTotal = new Button();
             labelCuota = new Label();
@@ -104,6 +97,13 @@
             textBoxNumeroTarjeta = new TextBox();
             labelNumeroTarjeta = new Label();
             labelVenciminetoTarjeta = new Label();
+            panelDatosCuenta = new Panel();
+            textBoxRazon = new TextBox();
+            labelRazon = new Label();
+            textBoxNumeroDeCuenta = new TextBox();
+            labelNumeroDeCuenta = new Label();
+            textBoxNombreDeBanco = new TextBox();
+            labelNombreDeBanco = new Label();
             panelNegro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imagenUTNFraUno).BeginInit();
             panelMenuOpcionesEstudiante.SuspendLayout();
@@ -113,9 +113,9 @@
             panelConsultarHorario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelRealizarPagos.SuspendLayout();
-            panelDatosCuenta.SuspendLayout();
             panelSeleccionarMetodo.SuspendLayout();
             panelTarjetas.SuspendLayout();
+            panelDatosCuenta.SuspendLayout();
             SuspendLayout();
             // 
             // panelNegro
@@ -648,83 +648,6 @@
             panelRealizarPagos.TabIndex = 17;
             panelRealizarPagos.Visible = false;
             // 
-            // panelDatosCuenta
-            // 
-            panelDatosCuenta.Anchor = AnchorStyles.None;
-            panelDatosCuenta.AutoSize = true;
-            panelDatosCuenta.BackColor = Color.RosyBrown;
-            panelDatosCuenta.Controls.Add(textBoxRazon);
-            panelDatosCuenta.Controls.Add(labelRazon);
-            panelDatosCuenta.Controls.Add(textBoxNumeroDeCuenta);
-            panelDatosCuenta.Controls.Add(labelNumeroDeCuenta);
-            panelDatosCuenta.Controls.Add(textBoxNombreDeBanco);
-            panelDatosCuenta.Controls.Add(labelNombreDeBanco);
-            panelDatosCuenta.Location = new Point(780, 138);
-            panelDatosCuenta.Name = "panelDatosCuenta";
-            panelDatosCuenta.Size = new Size(459, 107);
-            panelDatosCuenta.TabIndex = 25;
-            panelDatosCuenta.Visible = false;
-            // 
-            // textBoxRazon
-            // 
-            textBoxRazon.Anchor = AnchorStyles.None;
-            textBoxRazon.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxRazon.Location = new Point(193, 74);
-            textBoxRazon.Name = "textBoxRazon";
-            textBoxRazon.Size = new Size(251, 25);
-            textBoxRazon.TabIndex = 7;
-            // 
-            // labelRazon
-            // 
-            labelRazon.Anchor = AnchorStyles.None;
-            labelRazon.AutoSize = true;
-            labelRazon.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelRazon.Location = new Point(14, 76);
-            labelRazon.Name = "labelRazon";
-            labelRazon.Size = new Size(173, 20);
-            labelRazon.TabIndex = 6;
-            labelRazon.Text = "Razón por Transferir:";
-            // 
-            // textBoxNumeroDeCuenta
-            // 
-            textBoxNumeroDeCuenta.Anchor = AnchorStyles.None;
-            textBoxNumeroDeCuenta.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNumeroDeCuenta.Location = new Point(174, 39);
-            textBoxNumeroDeCuenta.Name = "textBoxNumeroDeCuenta";
-            textBoxNumeroDeCuenta.Size = new Size(270, 25);
-            textBoxNumeroDeCuenta.TabIndex = 5;
-            // 
-            // labelNumeroDeCuenta
-            // 
-            labelNumeroDeCuenta.Anchor = AnchorStyles.None;
-            labelNumeroDeCuenta.AutoSize = true;
-            labelNumeroDeCuenta.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelNumeroDeCuenta.Location = new Point(14, 41);
-            labelNumeroDeCuenta.Name = "labelNumeroDeCuenta";
-            labelNumeroDeCuenta.Size = new Size(156, 20);
-            labelNumeroDeCuenta.TabIndex = 4;
-            labelNumeroDeCuenta.Text = "Número de Cuenta:";
-            // 
-            // textBoxNombreDeBanco
-            // 
-            textBoxNombreDeBanco.Anchor = AnchorStyles.None;
-            textBoxNombreDeBanco.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNombreDeBanco.Location = new Point(174, 5);
-            textBoxNombreDeBanco.Name = "textBoxNombreDeBanco";
-            textBoxNombreDeBanco.Size = new Size(270, 25);
-            textBoxNombreDeBanco.TabIndex = 3;
-            // 
-            // labelNombreDeBanco
-            // 
-            labelNombreDeBanco.Anchor = AnchorStyles.None;
-            labelNombreDeBanco.AutoSize = true;
-            labelNombreDeBanco.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelNombreDeBanco.Location = new Point(14, 8);
-            labelNombreDeBanco.Name = "labelNombreDeBanco";
-            labelNombreDeBanco.Size = new Size(154, 20);
-            labelNombreDeBanco.TabIndex = 2;
-            labelNombreDeBanco.Text = "Nombre del Banco:";
-            // 
             // buttonPagar
             // 
             buttonPagar.Anchor = AnchorStyles.None;
@@ -1022,6 +945,83 @@
             labelVenciminetoTarjeta.TabIndex = 4;
             labelVenciminetoTarjeta.Text = "Vencimiento:";
             // 
+            // panelDatosCuenta
+            // 
+            panelDatosCuenta.Anchor = AnchorStyles.None;
+            panelDatosCuenta.AutoSize = true;
+            panelDatosCuenta.BackColor = Color.RosyBrown;
+            panelDatosCuenta.Controls.Add(textBoxRazon);
+            panelDatosCuenta.Controls.Add(labelRazon);
+            panelDatosCuenta.Controls.Add(textBoxNumeroDeCuenta);
+            panelDatosCuenta.Controls.Add(labelNumeroDeCuenta);
+            panelDatosCuenta.Controls.Add(textBoxNombreDeBanco);
+            panelDatosCuenta.Controls.Add(labelNombreDeBanco);
+            panelDatosCuenta.Location = new Point(780, 138);
+            panelDatosCuenta.Name = "panelDatosCuenta";
+            panelDatosCuenta.Size = new Size(459, 107);
+            panelDatosCuenta.TabIndex = 25;
+            panelDatosCuenta.Visible = false;
+            // 
+            // textBoxRazon
+            // 
+            textBoxRazon.Anchor = AnchorStyles.None;
+            textBoxRazon.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxRazon.Location = new Point(193, 74);
+            textBoxRazon.Name = "textBoxRazon";
+            textBoxRazon.Size = new Size(251, 25);
+            textBoxRazon.TabIndex = 7;
+            // 
+            // labelRazon
+            // 
+            labelRazon.Anchor = AnchorStyles.None;
+            labelRazon.AutoSize = true;
+            labelRazon.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelRazon.Location = new Point(14, 76);
+            labelRazon.Name = "labelRazon";
+            labelRazon.Size = new Size(173, 20);
+            labelRazon.TabIndex = 6;
+            labelRazon.Text = "Razón por Transferir:";
+            // 
+            // textBoxNumeroDeCuenta
+            // 
+            textBoxNumeroDeCuenta.Anchor = AnchorStyles.None;
+            textBoxNumeroDeCuenta.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxNumeroDeCuenta.Location = new Point(174, 39);
+            textBoxNumeroDeCuenta.Name = "textBoxNumeroDeCuenta";
+            textBoxNumeroDeCuenta.Size = new Size(270, 25);
+            textBoxNumeroDeCuenta.TabIndex = 5;
+            // 
+            // labelNumeroDeCuenta
+            // 
+            labelNumeroDeCuenta.Anchor = AnchorStyles.None;
+            labelNumeroDeCuenta.AutoSize = true;
+            labelNumeroDeCuenta.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelNumeroDeCuenta.Location = new Point(14, 41);
+            labelNumeroDeCuenta.Name = "labelNumeroDeCuenta";
+            labelNumeroDeCuenta.Size = new Size(156, 20);
+            labelNumeroDeCuenta.TabIndex = 4;
+            labelNumeroDeCuenta.Text = "Número de Cuenta:";
+            // 
+            // textBoxNombreDeBanco
+            // 
+            textBoxNombreDeBanco.Anchor = AnchorStyles.None;
+            textBoxNombreDeBanco.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxNombreDeBanco.Location = new Point(174, 5);
+            textBoxNombreDeBanco.Name = "textBoxNombreDeBanco";
+            textBoxNombreDeBanco.Size = new Size(270, 25);
+            textBoxNombreDeBanco.TabIndex = 3;
+            // 
+            // labelNombreDeBanco
+            // 
+            labelNombreDeBanco.Anchor = AnchorStyles.None;
+            labelNombreDeBanco.AutoSize = true;
+            labelNombreDeBanco.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelNombreDeBanco.Location = new Point(14, 8);
+            labelNombreDeBanco.Name = "labelNombreDeBanco";
+            labelNombreDeBanco.Size = new Size(154, 20);
+            labelNombreDeBanco.TabIndex = 2;
+            labelNombreDeBanco.Text = "Nombre del Banco:";
+            // 
             // FormEstudiante
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1055,11 +1055,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelRealizarPagos.ResumeLayout(false);
             panelRealizarPagos.PerformLayout();
-            panelDatosCuenta.ResumeLayout(false);
-            panelDatosCuenta.PerformLayout();
             panelSeleccionarMetodo.ResumeLayout(false);
             panelTarjetas.ResumeLayout(false);
             panelTarjetas.PerformLayout();
+            panelDatosCuenta.ResumeLayout(false);
+            panelDatosCuenta.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
